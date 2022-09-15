@@ -1,10 +1,9 @@
 <script lang="ts">
-    import TextPage from "$lib/components/patchouli/TextPage.svelte";
-    import CraftingPage from "$lib/components/patchouli/CraftingPage.svelte";
-    import ApparatusPage from "$lib/components/patchouli/ApparatusPage.svelte";
-    import ImbuementPage from "$lib/components/patchouli/ImbuementPage.svelte";
-    import LinkPage from "$lib/components/patchouli/LinkPage.svelte";
-    import EnchantingPage from "$lib/components/patchouli/EnchantingPage.svelte";
+    import TextPage from '$lib/components/patchouli/TextPage.svelte';
+    import CraftingPage from '$lib/components/patchouli/CraftingPage.svelte';
+    import LinkPage from '$lib/components/patchouli/LinkPage.svelte';
+    import RelationsPage from "$lib/components/patchouli/RelationsPage.svelte";
+    import ArsPage from "$lib/components/patchouli/ArsPage.svelte";
 
     export let patchouliPage: App.PatchouliPage;
 
@@ -15,21 +14,23 @@
             case 'patchouli:crafting':
                 return CraftingPage;
             case 'patchouli:link':
-                return LinkPage
+                return LinkPage;
+            case 'patchouli:relations':
+                return RelationsPage;
             case 'ars_nouveau:apparatus_recipe':
-                return ApparatusPage;
             case 'ars_nouveau:imbuement_recipe':
-                return ImbuementPage;
             case 'ars_nouveau:enchanting_recipe':
-                return EnchantingPage;
+            case "ars_nouveau:glyph_recipe":
+            case "ars_nouveau:no_output_apparatus_recipe":
+                return ArsPage;
             default:
                 return undefined;
         }
-    }
+    };
 
-    $: displayedComponent = getDisplayedComponent(patchouliPage?.type)
+    $: displayedComponent = getDisplayedComponent(patchouliPage?.type);
 </script>
 
-<div class="mb-2">
+<div class="mb-2" style="min-width: 60vw">
     <svelte:component {...patchouliPage} this={displayedComponent}/>
 </div>
