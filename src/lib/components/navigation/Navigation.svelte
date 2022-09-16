@@ -5,6 +5,9 @@
     import {storeMobileDrawer} from '$lib/stores/uiState';
     import {Divider, List, ListItem} from '@brainandbones/skeleton';
     import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
+    import {afterNavigate} from '$app/navigation';
+    import {browser} from '$app/environment';
+
 
     export let embedded: boolean = false;
 
@@ -17,6 +20,16 @@
     $: sortedCategories = Object.values($patchouliStore).sort(
         (categoryA, categoryB) => categoryA.sortnum - categoryB.sortnum
     );
+    afterNavigate(() => {
+        if (browser) {
+            setTimeout(() => {
+                const elements = document.getElementsByClassName("!bg-primary-500");
+                if (elements && elements.length > 0) {
+                    elements[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+                }
+            }, 1)
+        }
+    })
 </script>
 
 <div class="mb-8 {$$props.class || ''}">
@@ -28,7 +41,8 @@
         </div>
 
         <List label={getLabel(category.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
-              selected={storeCurrentUrl} tag="nav">
+              selected={storeCurrentUrl} tag="nav"
+              highlight="!bg-primary-500 !text-white">
             {#each Object.entries(category.entries) as [id, entry]}
                 <ListItem
                         href={`/category/${entry.category}/entry/${id}`}
