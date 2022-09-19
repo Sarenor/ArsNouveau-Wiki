@@ -4,9 +4,10 @@
     import {patchouliStore} from '$lib/stores/fileStore';
     import {storeMobileDrawer} from '$lib/stores/uiState';
     import {Divider, List, ListItem} from '@brainandbones/skeleton';
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
     import {afterNavigate} from '$app/navigation';
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
+    import Label from "$lib/components/Label.svelte";
+    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore";
 
 
     export let embedded: boolean = false;
@@ -29,7 +30,7 @@
     {#each sortedCategories as category, i}
         <div class="text-primary-500 text-sm font-bold uppercase p-4">
             <a href={`/category/${category.id}`} style="text-decoration-line: none">
-                {getLabel(category.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}
+                <Label label={category.name}/>
             </a>
         </div>
 
@@ -42,7 +43,7 @@
                         value={`/category/${entry.category}/entry/${id}`}
                         on:click={onListItemClick}
                 >
-                    <span>{getLabel(entry.name, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}</span>
+                    <span><Label label={entry.name}/></span>
                 </ListItem>
             {/each}
         </List>

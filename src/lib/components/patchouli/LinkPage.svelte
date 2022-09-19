@@ -1,12 +1,11 @@
 <script lang="ts">
-    import {getLabel} from '$lib/languages.js';
-    import {chosenLanguageStore, languagesStore, minecraftLanguageStore} from "$lib/stores/languageStore.js";
+    import Label from "$lib/components/Label.svelte";
 
     export let text: string;
     export let link_text: string;
     export let url: string;
 </script>
 
-<p>{getLabel(text, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}</p>
+<p><Label label={text}/></p>
 <a href={url} rel="noopener noreferrer"
-   target="_blank">{getLabel(link_text, $languagesStore, $chosenLanguageStore, $minecraftLanguageStore)}</a>
+   target="_blank"><Label label={link_text}/></a>

@@ -2,6 +2,7 @@
     import '@brainandbones/skeleton/styles/themes/theme-modern.css';
     import '@brainandbones/skeleton/styles/tailwind.css';
     import '@brainandbones/skeleton/styles/core.css';
+    import '@brainandbones/skeleton/styles/forms.css';
     import '@brainandbones/skeleton/styles/typography.css';
     import '../theme.postcss';
     import '../app.postcss';
@@ -55,7 +56,7 @@
     <svelte:fragment slot="pageFooter">
         <footer class="flex justify-end mb-1 mr-1 appFooter"><p>Ars Nouveau Wiki</p></footer>
     </svelte:fragment>
-    <div class="m-4" style="min-height: 91vh;">
+    <div class="m-4 page">
         <slot/>
     </div>
 </AppShell>
