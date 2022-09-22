@@ -2,9 +2,8 @@
     import {searchStore} from "$lib/stores/searchStore";
     import Search from "$lib/components/Search/Search.svelte";
     import Dropdown from "$lib/components/Search/Dropdown.svelte";
-    import {List, ListItem} from "@brainandbones/skeleton";
 
-    export let mobile: false;
+    export let mobile = false;
 
     let value: string;
     let searchElement: HTMLElement;
@@ -38,12 +37,20 @@
         data-svelte-typeahead
         role="combobox"
 >
-    <Search bind:value label="Search" on:blur={onBlur} on:focus={onFocus}/>
+    <Search bind:value on:blur={onBlur} on:focus={onFocus}/>
     <Dropdown id="search-dropdown" open={focus && !!results} openLeft={mobile} parentElement={searchElement}>
-        <List slot="content" tag="nav">
-            {#each results as result}
-                <ListItem href={result.href}>{result.title}</ListItem>
-            {/each}
-        </List>
+        <nav class="list-nav" slot="content">
+            <ul>
+                {#each results as result}
+                    <li>
+                        <a href={result.href}>
+                            <span class="flex-auto">
+                                {result.title}
+                            </span>
+                        </a>
+                    </li>
+                {/each}
+            </ul>
+        </nav>
     </Dropdown>
 </div>
