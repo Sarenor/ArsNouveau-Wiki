@@ -3,7 +3,6 @@ import { apiBaseURL } from '$lib/utils/apiUtils';
 
 const headers = new Headers({
 	Accept: 'application/vnd.github+json',
-	origin: '*',
 	Authorization: `Bearer: ${env.GITHUB_API_KEY}`
 });
 const fetchParameters = { method: 'GET', headers };
