@@ -29,7 +29,7 @@ const initalizeDynamicallyLoadedStores = (
 	return fetch(url)
 		.then(function (response) {
 			if (response.status === 200 || response.status === 0) {
-				return Promise.resolve(response.blob());
+				return response.blob();
 			} else {
 				console.log(response.statusText);
 				return Promise.reject(new Error(response.statusText));
