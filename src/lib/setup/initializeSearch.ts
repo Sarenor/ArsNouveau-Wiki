@@ -45,7 +45,7 @@ export const initializeSearch = (
 			searchCandidates.push({
 				title: getLabelWithCurrentValues(entry.name) || '',
 				text: getEntryText(entry) || '',
-				href: `/category/${entry.category}/entry/${entry.name}`
+				href: `/category/${entry.category}/entry/${entry.name?.split('.').pop()}`
 			});
 		});
 	}
