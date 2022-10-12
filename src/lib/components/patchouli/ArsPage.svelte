@@ -6,6 +6,8 @@
     import EnchantmentRecipe from "$lib/components/patchouli/RecipeDisplay/EnchantmentRecipe.svelte";
     import GlyphRecipe from "$lib/components/patchouli/RecipeDisplay/GlyphRecipe.svelte";
     import ArmorUpgradeRecipe from "$lib/components/patchouli/RecipeDisplay/ArmorUpgradeRecipe.svelte";
+    import SpellWrite from "$lib/components/patchouli/RecipeDisplay/SpellWrite.svelte";
+    import ReactiveEnchantment from "$lib/components/patchouli/RecipeDisplay/ReactiveEnchantment.svelte";
 
 
     const getRecipeDisplay = (type: string) => {
@@ -20,6 +22,10 @@
                 return GlyphRecipe;
             case 'ars_nouveau:armor_upgrade':
                 return ArmorUpgradeRecipe;
+            case 'ars_nouveau:spell_write':
+                return SpellWrite;
+            case 'ars_nouveau:reactive_enchantment':
+                return ReactiveEnchantment
             default:
                 return undefined;
         }
