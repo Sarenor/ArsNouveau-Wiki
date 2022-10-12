@@ -86,7 +86,6 @@ export const notDisplayableItems = [
 	'minecraft:fletching_table',
 	'minecraft:dispenser',
 	'minecraft:torch',
-	'minecraft:tripewire_hook',
 	'minecraft:scaffolding',
 	'minecraft:poppy',
 	'minecraft:cobweb',
@@ -105,5 +104,6 @@ export const notDisplayableItems = [
 	'minecraft:wither_skeleton_skull',
 	'minecraft:crafting_table',
 	'minecraft:amethyst_block',
+	'minecraft:tripwire_hook',
 	'minecraft:stone_button'
 ];

@@ -2,14 +2,14 @@
     import {patchouliStore} from '$lib/stores/fileStore';
     import PatchouliPage from '$lib/components/patchouli/PatchouliPage.svelte';
     import Label from "$lib/components/Label.svelte";
-    import {getLabelWithCurrentValues} from "$lib/languages";
+    import {labelStore} from "$lib/stores/languageStore";
 
     /** @type {import('./$types').PageData} */
     export let data: App.PageData;
 
     $: containingCategory = $patchouliStore[data?.category];
     $: displayedEntry = containingCategory.entries[data?.entry];
-    $: entryName = getLabelWithCurrentValues(displayedEntry?.name);
+    $: entryName = $labelStore(displayedEntry?.name);
 </script>
 
 <svelte:head><title>{entryName}</title></svelte:head>
