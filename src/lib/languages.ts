@@ -50,31 +50,7 @@ export const getLabelWithCurrentValues = (label: string): string => {
 	const minecraftLanguage = get(minecraftLanguageStore);
 
 	if (languages && minecraftLanguage) {
-		const foundLabel =
-			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';
-		if (foundLabel === 'unknown label') {
-			return label;
-		}
-		return foundLabel;
-	} else {
-		console.log('Languages not yet loaded');
-		return 'unknown label';
-	}
-};
-
-export const getLabel = (
-	label: string,
-	languages: App.LanguageDictionary,
-	chosenLanguage: string,
-	minecraftLanguage: App.MinecraftLanguageDictionary
-): string => {
-	if (languages && minecraftLanguage) {
-		const foundLabel =
-			languages[chosenLanguage][label] || minecraftLanguage[label] || 'unknown label';
-		if (foundLabel === 'unknown label') {
-			return label;
-		}
-		return foundLabel;
+		return languages[chosenLanguage][label] || minecraftLanguage[label] || label;
 	} else {
 		console.log('Languages not yet loaded');
 		return 'unknown label';

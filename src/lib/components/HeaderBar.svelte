@@ -3,7 +3,6 @@
     import {storeMobileDrawer} from '$lib/stores/uiState';
     import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
-    import {browser} from '$app/environment'
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
     import LanguageSelection from "$lib/components/LanguageSelection.svelte";
 
@@ -32,10 +31,12 @@
         <div class="hidden lg:block">
             <LanguageSelection/>
         </div>
-        {#if browser}
-            <div class="hidden lg:block">
+        <div class="hidden lg:block">
+            {#await Promise.resolve()}
+                <div class="placeholder animate-pulse w-52" style="height: 2.5rem"/>
+            {:then irrelevant}
                 <SmartSearch/>
-            </div>
-        {/if}
+            {/await}
+        </div>
     </svelte:fragment>
 </AppBar>

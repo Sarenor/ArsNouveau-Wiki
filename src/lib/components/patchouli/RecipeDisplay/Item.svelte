@@ -29,7 +29,8 @@
 <script lang="ts">
     import {texturesStore} from "$lib/stores/fileStore";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
-    import {getBlockOrItemLabel, getLabelWithCurrentValues} from "$lib/languages";
+    import {getBlockOrItemLabel} from "$lib/languages";
+    import {labelStore} from "$lib/stores/languageStore";
 
     export let item: string;
 
@@ -39,7 +40,7 @@
             if (splitItem[0] === 'ars_nouveau') {
                 return getBlockOrItemLabel(splitItem[1]);
             } else {
-                return getLabelWithCurrentValues(`block.minecraft.${splitItem[1]}`);
+                return $labelStore(`block.minecraft.${splitItem[1]}`);
             }
         } else {
             return getBlockOrItemLabel(item);
