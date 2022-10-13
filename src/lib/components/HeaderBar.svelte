@@ -5,6 +5,7 @@
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
     import LanguageSelection from "$lib/components/LanguageSelection.svelte";
+    import AddonMenu from "$lib/components/AddonMenu.svelte";
 
     // Drawer Handler
     function drawerOpen(): void {
@@ -28,6 +29,9 @@
             title="Return to main page">Ars Nouveau Wiki</a
     >
     <svelte:fragment slot="trail">
+        <div class="hidden lg:block">
+            <AddonMenu mobile={false}/>
+        </div>
         <div class="hidden lg:block">
             <LanguageSelection/>
         </div>

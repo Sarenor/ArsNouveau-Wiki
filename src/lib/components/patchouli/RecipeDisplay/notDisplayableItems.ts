@@ -62,6 +62,8 @@ export const notDisplayableItems = [
 	'ars_nouveau:blue_archwood_sapling',
 	'ars_nouveau:purple_archwood_sapling',
 	'ars_nouveau:alteration_table',
+	'ars_elemental:spell_horn',
+	'ars_elemental:anima_essence',
 	'minecraft:obsidian',
 	'minecraft:blue_ice',
 	'minecraft:dandelion',

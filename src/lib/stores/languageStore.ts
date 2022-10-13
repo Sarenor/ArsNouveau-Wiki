@@ -16,7 +16,6 @@ export const labelStore: Readable<(label: string) => string> = derived(
 	([$languages, $chosenLanguage, $minecraftLanguage]) => {
 		if ($languages) {
 			return (label: string) => {
-				debugger;
 				return $languages[$chosenLanguage][label] || $minecraftLanguage[label] || label;
 			};
 		} else {

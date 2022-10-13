@@ -10,9 +10,6 @@
     }
 
     const getItemSrc = (item: string, textures: App.TextureDictionary) => {
-        if (item && !item.split) {
-            debugger;
-        }
         let src = getTexture(mapSpecialNames(item), textures)
         const itemId = getIdFromResourceLocation(item);
         if (src === 'Unknown Texture') {
@@ -31,13 +28,14 @@
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
     import {getBlockOrItemLabel} from "$lib/languages";
     import {labelStore} from "$lib/stores/languageStore";
+    import {modlist} from "$lib/utils/modInformations";
 
     export let item: string;
 
     const getDisplayText = (item: string) => {
         if (notDisplayableItems.includes(item)) {
             const splitItem = item.split(":");
-            if (splitItem[0] === 'ars_nouveau') {
+            if (modlist.includes(splitItem[0])) {
                 return getBlockOrItemLabel(splitItem[1]);
             } else {
                 return $labelStore(`block.minecraft.${splitItem[1]}`);
@@ -53,7 +51,8 @@
 </script>
 
 <div class="self-center flex flex-col items-center justify-center craftingGridItem">
-    {#if showImage}<img alt={`picture of the ingredient ${item}`} {src} class="craftingGridPicture"
-                        style="image-rendering: pixelated"/>{/if}
+    {#if showImage}
+        <img alt={`picture of the ingredient ${item}`} {src} class="craftingGridPicture"/>
+    {/if}
     <span class="text-center break-words w-full">{displayText}</span>
 </div>

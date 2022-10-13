@@ -43,6 +43,7 @@ declare namespace App {
 		entries: {
 			[x: string]: PatchouliEntry;
 		};
+		source: string;
 	}
 
 	interface PatchouliEntry {
@@ -50,6 +51,7 @@ declare namespace App {
 		icon: string;
 		name: string;
 		pages: Array<PatchouliPage>;
+		source: string;
 	}
 
 	interface Item {
@@ -158,5 +160,15 @@ declare namespace App {
 		title: string;
 		text: string;
 		href: string;
+	}
+
+	export interface ModInformation {
+		texturePredicate: (filename: string) => boolean;
+		patchouliCategoryPredicate: (filename: string) => boolean;
+		patchouliEntryPredicate: (filename: string) => boolean;
+		recipePredicate: (filename: string) => boolean;
+		languagePredicate: (filename: string) => boolean;
+		repositoryId: string;
+		repositoryBranch?: string;
 	}
 }
