@@ -49,7 +49,7 @@ export const getBlockOrItemLabel = (label: string): string => {
 	const splitLabel = label.split(':');
 	if (splitLabel.length > 1) {
 		if (splitLabel[0] !== 'minecraft') {
-			return getModLabel(splitLabel[1]) || label;
+			return getModLabel(splitLabel[1].replace('/', '.')) || label;
 		} else {
 			return getMinecraftLabel(splitLabel[1]) || label;
 		}

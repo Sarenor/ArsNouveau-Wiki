@@ -16,9 +16,9 @@
         storeMobileDrawer.set(false);
     }
 
-    $: sortedCategories = Object.values($patchouliStore).sort(
-        (categoryA, categoryB) => categoryA.sortnum - categoryB.sortnum
-    );
+    $: sortedCategories = Object.values($patchouliStore)
+        .filter(category => !!category.entries)
+        .sort((categoryA, categoryB) => categoryA.sortnum - categoryB.sortnum);
     afterNavigate(() => {
         scrollSelectionIntoView();
     })

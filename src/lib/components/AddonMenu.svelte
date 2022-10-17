@@ -34,6 +34,10 @@
                 <img alt="The Ars Elemental Logo" slot="lead" src={elementalIcons[Math. floor(Math. random() * (4))]}/>
                 Ars Elemental
             </ListBoxItem>
+            <ListBoxItem value={'ars_gears'}>
+                <img alt="The Ars G.E.A.R.S Logo" slot="lead" src="/arcane_combat_gear.png"/>
+                Ars G.E.A.R.S
+            </ListBoxItem>
             <ListBoxItem value={'ars_instrumentum'}>
                 <img alt="The Ars Instrumentum Logo" slot="lead" src="/wizards_armarium.png"/>
                 Ars Instrumentum
@@ -41,6 +45,10 @@
             <ListBoxItem value={'ars_omega'}>
                 <img alt="The Ars Omega Logo" slot="lead" src="/demonic_crystal.png"/>
                 Ars Omega
+            </ListBoxItem>
+            <ListBoxItem value={'ars_scalaes'}>
+                <img alt="The Ars Scalaes Logo" slot="lead" src="/scalaes.png"/>
+                Ars Scalaes
             </ListBoxItem>
             <ListBoxItem value={'too_many_glyphs'}>
                 <img alt="The Too Many Glyphs Logo" slot="lead" src="/chaining.png"/>

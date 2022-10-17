@@ -5,7 +5,6 @@
 
     export let recipeData: App.ShapelessRecipe;
 
-
 </script>
 
 <h4 class="mb-3">Shapeless Recipe</h4>

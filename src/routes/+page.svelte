@@ -9,4 +9,44 @@
         It can also be a bit janky, with missing names or unexpected errors.</p>
     <p>If you encounter any issues, please reach out in the Ars Nouveau Discord found <a
             href="/category/mod_news/entry/mod_news">here!</a></p>
+    <p>You can now select which Addon Mods you want to include in the wiki! Currently available:</p>
+    <ul class="list-disc pl-8">
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-elemental" rel="noopener noreferrer"
+               target="_blank">
+                Ars Elemental
+            </a>
+        </li>
+        <li>
+            <a href="curseforge.com/minecraft/mc-mods/ars-nouveau-gears" rel="noopener noreferrer" target="_blank">
+                Ars G.E.A.R.S
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-instrumentum" rel="noopener noreferrer"
+               target="_blank">
+                Ars Instrumentum (Beta, repository doesn't have all the necessary information)
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-omega" rel="noopener noreferrer" target="_blank">
+                Ars Omega
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-scalaes" rel="noopener noreferrer"
+               target="_blank">
+                Ars Scalaes (Beta, repository doesn't have all the necessary information)
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs" rel="noopener noreferrer"
+               target="_blank">
+                Too Many Glyphs (Beta, repository doesn't have all the necessary information)
+            </a>
+        </li>
+    </ul>
+    <p>Not all Addons are available for the current version and addon documentation functionality is less tested than
+        Ars Nouveau Wiki functionality. Use at your own risk.</p>
+    <p>Direct links to addon pages are currently not supported.</p>
 </div>

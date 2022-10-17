@@ -5,28 +5,28 @@ export const resolveTag = (tag: string): string | undefined => {
 			case 'ingots':
 				switch (tagParts[1]) {
 					case 'gold':
-						return 'gold_ingot';
+						return 'minecraft:gold_ingot';
 					case 'iron':
-						return 'iron_ingot';
+						return 'minecraft:iron_ingot';
 					case 'copper':
-						return 'copper_ingot';
+						return 'minecraft:copper_ingot';
 					case 'netherite':
-						return 'netherite_ingot';
+						return 'minecraft:netherite_ingot';
 					default:
 						return undefined;
 				}
 			case 'gems':
 				switch (tagParts[1]) {
 					case 'source':
-						return 'source_gem';
+						return 'ars_nouveau:source_gem';
 					case 'diamond':
-						return 'diamond';
+						return 'minecraft:diamond';
 					case 'quartz':
-						return 'quartz';
+						return 'minecraft:quartz';
 					case 'lapis':
-						return 'lapis_lazuli';
+						return 'minecraft:lapis_lazuli';
 					case 'emerald':
-						return 'emerald';
+						return 'minecraft:emerald';
 					default:
 						return undefined;
 				}
@@ -54,16 +54,16 @@ export const resolveTag = (tag: string): string | undefined => {
 			case 'rods':
 				switch (tagParts[1]) {
 					case 'blaze':
-						return 'blaze_rod';
+						return 'minecraft:blaze_rod';
 					default:
 						return undefined;
 				}
 			case 'nuggets':
 				switch (tagParts[1]) {
 					case 'gold':
-						return 'gold_nugget';
+						return 'minecraft:gold_nugget';
 					case 'iron':
-						return 'iron_nugget';
+						return 'minecraft:iron_nugget';
 					default:
 						return undefined;
 				}
@@ -80,46 +80,52 @@ export const resolveTag = (tag: string): string | undefined => {
 			case 'summon_bed':
 				return 'Any Starby bed';
 			case 'seeds':
-				return 'wheat_seeds';
+				return 'minecraft:wheat_seeds';
 			case 'dyes':
 				switch (tagParts[1]) {
 					case 'blue':
-						return 'blue_dye';
+						return 'minecraft:blue_dye';
 					case 'red':
-						return 'red_dye';
+						return 'minecraft:red_dye';
 					case 'yellow':
-						return 'yellow_dye';
+						return 'minecraft:yellow_dye';
 					case 'orange':
-						return 'orange_dye';
+						return 'minecraft:orange_dye';
 					case 'purple':
-						return 'purple_dye';
+						return 'minecraft:purple_dye';
 					case 'white':
-						return 'white_dye';
+						return 'minecraft:white_dye';
 					case 'black':
-						return 'black_dye';
+						return 'minecraft:black_dye';
 					case 'light_blue':
-						return 'light_blue_dye';
+						return 'minecraft:light_blue_dye';
 					case 'lime':
-						return 'lime_dye';
+						return 'minecraft:lime_dye';
 					case 'cyan':
-						return 'cyan_dye';
+						return 'minecraft:cyan_dye';
 					case 'gray':
-						return 'gray_dye';
+						return 'minecraft:gray_dye';
 					case 'light_gray':
-						return 'light_gray_dye';
+						return 'minecraft:light_gray_dye';
 					case 'brown':
-						return 'brown_dye';
+						return 'minecraft:brown_dye';
 					case 'green':
-						return 'green_dye';
+						return 'minecraft:green_dye';
 					case 'magenta':
-						return 'magenta_dye';
+						return 'minecraft:magenta_dye';
 					case 'pink':
-						return 'pink_dye';
+						return 'minecraft:pink_dye';
 					default:
 						return 'unknown color';
 				}
 			case 'ender_pearls':
-				return 'ender_pearl';
+				return 'minecraft:ender_pearl';
+			case 'crops': {
+				switch (tagParts[1]) {
+					case 'nether_wart':
+						return 'minecraft:nether_wart';
+				}
+			}
 		}
 	}
 	return undefined;

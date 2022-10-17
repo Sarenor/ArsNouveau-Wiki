@@ -3,14 +3,15 @@ import { getFileName } from '$lib/utils/fileName';
 
 export const getTextureFiles = (
 	matcher: (filename: string) => boolean,
-	zippedFiles: Array<JSZipObject>
+	zippedFiles: Array<JSZipObject>,
+	modId: string
 ) => {
 	return Promise.all(
 		zippedFiles
 			.filter((zippedFile) => matcher(zippedFile.name))
 			.map((file) =>
 				file.async('base64').then((value) => {
-					return { [getFileName(file.name)]: value };
+					return { [`${modId}:${getFileName(file.name)}`]: value };
 				})
 			)
 	).then((resultingArray) => {
@@ -22,17 +23,26 @@ export const getTextureFiles = (
 
 export const getMatchingJSONFiles = (
 	matcher: (filename: string) => boolean,
-	zippedFiles: Array<JSZipObject>
+	zippedFiles: Array<JSZipObject>,
+	additionalTransformation?: (objectToTransform: object) => object
 ) => {
 	return Promise.all(
 		zippedFiles
 			.filter((zippedFile) => matcher(zippedFile.name))
 			.map((file) =>
 				file.async('string').then((value) => {
-					return { [getFileName(file.name)]: JSON.parse(value) };
+					const json = JSON.parse(value);
+					return {
+						[getFileName(file.name)]: additionalTransformation
+							? additionalTransformation(json)
+							: json
+					};
 				})
 			)
 	).then((resultingArray) => {
+		if (additionalTransformation) {
+			resultingArray = resultingArray.map(additionalTransformation);
+		}
 		return resultingArray.reduce((previousValue, currentValue) => {
 			return { ...previousValue, ...currentValue };
 		}, {});

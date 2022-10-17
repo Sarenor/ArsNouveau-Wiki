@@ -2,15 +2,8 @@
     import {getTexture} from "$lib/textures";
     import {getIdFromResourceLocation} from "$lib/utils/idResolver";
 
-    const mapSpecialNames = (name: string) => {
-        if (name === 'ars_nouveau:magebloom_crop') {
-            return 'magebloom_seed';
-        }
-        return name;
-    }
-
     const getItemSrc = (item: string, textures: App.TextureDictionary) => {
-        let src = getTexture(mapSpecialNames(item), textures)
+        let src = getTexture(item, textures)
         const itemId = getIdFromResourceLocation(item);
         if (src === 'Unknown Texture') {
             if (['clock', 'compass'].includes(itemId)) {

@@ -22,6 +22,7 @@ export const notDisplayableItems = [
 	'ars_nouveau:archwood_slab',
 	'ars_nouveau:archwood_planks',
 	'ars_nouveau:source_gem_block',
+	'ars_nouveau:mana_gem_block',
 	'ars_nouveau:potion_diffuser',
 	'ars_nouveau:source_jar',
 	'ars_nouveau:potion_jar',
@@ -64,6 +65,8 @@ export const notDisplayableItems = [
 	'ars_nouveau:alteration_table',
 	'ars_elemental:spell_horn',
 	'ars_elemental:anima_essence',
+	'ars_gears:stick_cross',
+	'ars_elemental:yellow_archwood_log',
 	'minecraft:obsidian',
 	'minecraft:blue_ice',
 	'minecraft:dandelion',
@@ -106,6 +109,11 @@ export const notDisplayableItems = [
 	'minecraft:wither_skeleton_skull',
 	'minecraft:crafting_table',
 	'minecraft:amethyst_block',
+	'minecraft:glass',
 	'minecraft:tripwire_hook',
-	'minecraft:stone_button'
+	'minecraft:stone_button',
+	'minecraft:gold_block',
+	'minecraft:iron_block',
+	'minecraft:diamond_block',
+	'minecraft:stone'
 ];

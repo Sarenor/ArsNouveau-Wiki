@@ -1,6 +1,6 @@
 import { loadedAddonStore, selectedAddonStore } from '$lib/stores/addonStore';
 import { get } from 'svelte/store';
-import { patchouliStore, recipesStore, storesLoaded, texturesStore } from '$lib/stores/fileStore';
+import { patchouliStore, recipesStore, texturesStore } from '$lib/stores/fileStore';
 import { getAddonURL } from '$lib/utils/apiUtils';
 import { modInformations } from '$lib/utils/modInformations';
 import { prepareZip } from '$lib/setup/prepareZip';
@@ -8,6 +8,21 @@ import { getMatchingJSONFiles, getTextureFiles } from '$lib/setup/loadFiles';
 import { preparePatchouli } from '$lib/setup/preparePatchouli';
 import { languagesStore } from '$lib/stores/languageStore';
 import { updateSearch } from '$lib/setup/initializeSearch';
+
+const fixApparatusRecipesIfNecessary = (recipe: any) => {
+	if (recipe.type === 'ars_nouveau:enchanting_apparatus' && recipe.item_1) {
+		recipe.pedestalItems = [];
+		for (let i = 1; i < 9; i++) {
+			if (recipe[`item_${i}`]) {
+				// Gods damn it, Bailey.
+				recipe.pedestalItems.push(recipe[`item_${i}`][0]);
+			}
+		}
+		return recipe;
+	} else {
+		return recipe;
+	}
+};
 
 const isObject = (item: any) => {
 	return item && typeof item === 'object' && !Array.isArray(item);
@@ -42,11 +57,15 @@ const loadAndStoreAddonData = (addonToBeLoaded: string) => {
 			.then(prepareZip)
 			.then(async function (zip) {
 				return Promise.all([
-					getTextureFiles(addonInformation.texturePredicate, zip),
+					getTextureFiles(addonInformation.texturePredicate, zip, addonToBeLoaded),
 					getMatchingJSONFiles(addonInformation.patchouliCategoryPredicate, zip),
 					getMatchingJSONFiles(addonInformation.patchouliEntryPredicate, zip),
 					getMatchingJSONFiles(addonInformation.languagePredicate, zip),
-					getMatchingJSONFiles(addonInformation.recipePredicate, zip)
+					getMatchingJSONFiles(
+						addonInformation.recipePredicate,
+						zip,
+						fixApparatusRecipesIfNecessary
+					)
 				]).then(
 					([
 						loadedTextures,

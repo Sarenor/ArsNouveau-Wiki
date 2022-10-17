@@ -101,10 +101,57 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			);
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_omega/lang');
+			return filename.includes('src/main/resources/assets/arsomega/lang');
 		},
 		repositoryId: 'dkmk100/ArsOmega',
 		repositoryBranch: '1.18.2-main'
+	},
+	ars_gears: {
+		texturePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_gears/textures');
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/data/ars_gears/recipes/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_gears/lang');
+		},
+		repositoryId: 'Cycro54/Ars_GEARs'
+	},
+	ars_scalaes: {
+		texturePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_scalaes/textures/item/');
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return (
+				filename.includes('src/generated/resources/data/ars_scalaes/recipes/') ||
+				filename.includes('src/main/resources/data/ars_scalaes/recipes/')
+			);
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_gears/lang');
+		},
+		repositoryId: 'Cycro54/Ars_GEARs'
 	},
 	too_many_glyphs: {
 		texturePredicate: (filename: string) => {
