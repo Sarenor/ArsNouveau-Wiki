@@ -4,20 +4,37 @@ import {
 	languagesStore,
 	minecraftLanguageStore
 } from '$lib/stores/languageStore';
+import { loadedAddonStore } from '$lib/stores/addonStore';
 
-const getArsNouveauLabel = (label: string): string | undefined => {
+const getModLabel = (label: string): string | undefined => {
 	if (label == 'source_berry') {
 		return getLabelWithCurrentValues('block.ars_nouveau.sourceberry_bush');
 	}
-	let foundLabel = getLabelWithCurrentValues(`item.ars_nouveau.${label}`);
-	if (foundLabel.startsWith('item.ars_nouveau')) {
-		foundLabel = getLabelWithCurrentValues(`block.ars_nouveau.${label}`);
+	const loadedMods = ['ars_nouveau', ...get(loadedAddonStore)];
+	let labelToReturn = label;
+	let foundLabel;
+	for (let i = 0; i < loadedMods.length; i++) {
+		foundLabel = getLabelWithCurrentValues(`item.${loadedMods[i]}.${label}`);
+		if (foundLabel.startsWith(`item.${loadedMods[i]}`)) {
+			foundLabel = getLabelWithCurrentValues(`block.${loadedMods[i]}.${label}`);
+		} else {
+			labelToReturn = foundLabel;
+			break;
+		}
+		// Hail Mary because Glyphs are done in an annoying way
+		if (foundLabel.startsWith(`block.${loadedMods[i]}`)) {
+			foundLabel = getLabelWithCurrentValues(`${loadedMods[i]}.glyph_name.glyph_${label}`);
+		} else {
+			labelToReturn = foundLabel;
+			break;
+		}
+		if (!foundLabel.startsWith(`${loadedMods[i]}.glyph_name.glyph_`)) {
+			labelToReturn = foundLabel;
+			break;
+		}
 	}
-	// Hail Mary because Glyphs are done in an annoying way
-	if (foundLabel.startsWith('block.ars_nouveau')) {
-		foundLabel = getLabelWithCurrentValues(`ars_nouveau.glyph_name.glyph_${label}`);
-	}
-	return foundLabel.startsWith('ars_nouveau.glyph_name.glyph_') ? undefined : foundLabel;
+
+	return labelToReturn;
 };
 
 const getMinecraftLabel = (label: string): string | undefined => {
@@ -31,13 +48,13 @@ const getMinecraftLabel = (label: string): string | undefined => {
 export const getBlockOrItemLabel = (label: string): string => {
 	const splitLabel = label.split(':');
 	if (splitLabel.length > 1) {
-		if (splitLabel[0] === 'ars_nouveau') {
-			return getArsNouveauLabel(splitLabel[1]) || label;
+		if (splitLabel[0] !== 'minecraft') {
+			return getModLabel(splitLabel[1].replace('/', '.')) || label;
 		} else {
 			return getMinecraftLabel(splitLabel[1]) || label;
 		}
 	}
-	let foundLabel = getArsNouveauLabel(label);
+	let foundLabel = getModLabel(label);
 	if (!foundLabel) {
 		foundLabel = getMinecraftLabel(label);
 	}

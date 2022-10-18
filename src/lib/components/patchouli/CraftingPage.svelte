@@ -21,8 +21,10 @@
         <FormattedLabel label={title}/>
     </h4>
 {/if}
-<svelte:component recipeData={recipeData} this={displayedComponent}/>
-{#if recipe2}
+{#if recipeData.type !== 'Unknown Recipe' }
+    <svelte:component recipeData={recipeData} this={displayedComponent}/>
+{/if}
+{#if recipe2 && recipeData2.type !== 'Unknown Recipe'}
     <svelte:component recipeData={recipeData2} this={displayedComponent2}/>
 {/if}
 <RecipeWarning/>

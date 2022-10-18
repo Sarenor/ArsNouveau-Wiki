@@ -5,7 +5,13 @@
     import Arrow from "$lib/components/icons/Arrow.svelte";
 
     export let recipeData: App.EnchantingApparatusRecipe;
-    $: mappedInputItems = recipeData.pedestalItems.map(ingredient => ingredient.item || ingredient.tag);
+    $: mappedInputItems = recipeData.pedestalItems.map(ingredient => {
+        if (ingredient.item?.item || ingredient.item?.tag) {
+            return ingredient.item;
+        } else {
+            return ingredient;
+        }
+    });
 </script>
 
 <h4 class="mb-3">Enchanting Apparatus Recipe</h4>
@@ -18,7 +24,6 @@
             {/each}
         </div>
     </div>
-    <Plus/>
     <div class="card card-body">
         <div class="flex flex-col items-center justify-center craftingGridItem">
             Reagent:
@@ -27,7 +32,7 @@
 
     </div>
     {#if recipeData.sourceCost}
-        +
+        <Plus/>
         <div class="card card-body flex flex-col items-center justify-center craftingGridItem">
             <span>Source: </span>
             <span>{recipeData.sourceCost}</span>

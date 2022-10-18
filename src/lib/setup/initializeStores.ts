@@ -2,17 +2,12 @@ import JSZip from 'jszip';
 import { preparePatchouli } from '$lib/setup/preparePatchouli';
 import { patchouliStore, recipesStore, storesLoaded, texturesStore } from '$lib/stores/fileStore';
 import { languagesStore, minecraftLanguageStore } from '$lib/stores/languageStore';
-import {
-	getMatchingJSONFiles,
-	getTextureFiles,
-	isLanguage,
-	isPatchouliCategory,
-	isPatchouliEntry,
-	isRecipe
-} from '$lib/setup/loadFiles';
+import { getMatchingJSONFiles, getTextureFiles } from '$lib/setup/loadFiles';
 import { browser } from '$app/environment';
 import { apiBaseURL } from '$lib/utils/apiUtils';
 import { initializeSearch } from '$lib/setup/initializeSearch';
+import { modInformations } from '$lib/utils/modInformations';
+import { prepareZip } from '$lib/setup/prepareZip';
 
 const initalizeMinecraftLanguageStore = (
 	fetch: (info: RequestInfo, init?: RequestInit) => Promise<Response>
@@ -27,25 +22,14 @@ const initalizeDynamicallyLoadedStores = (
 ) => {
 	const url = browser ? apiBaseURL() : '/api/zipball';
 	return fetch(url)
-		.then(function (response) {
-			if (response.status === 200 || response.status === 0) {
-				return response.blob();
-			} else {
-				console.log(response.statusText);
-				return Promise.reject(new Error(response.statusText));
-			}
-		})
-		.then((blob) => blob.arrayBuffer())
-		.then((blob) => {
-			return JSZip.loadAsync(blob);
-		})
+		.then(prepareZip)
 		.then(async function (zip) {
 			return Promise.all([
-				getTextureFiles(zip),
-				getMatchingJSONFiles(isPatchouliCategory, zip),
-				getMatchingJSONFiles(isPatchouliEntry, zip),
-				getMatchingJSONFiles(isLanguage, zip),
-				getMatchingJSONFiles(isRecipe, zip)
+				getTextureFiles(modInformations.ars_nouveau.texturePredicate, zip, 'ars_nouveau'),
+				getMatchingJSONFiles(modInformations.ars_nouveau.patchouliCategoryPredicate, zip),
+				getMatchingJSONFiles(modInformations.ars_nouveau.patchouliEntryPredicate, zip),
+				getMatchingJSONFiles(modInformations.ars_nouveau.languagePredicate, zip),
+				getMatchingJSONFiles(modInformations.ars_nouveau.recipePredicate, zip)
 			]).then(
 				([
 					loadedTextures,
@@ -55,7 +39,9 @@ const initalizeDynamicallyLoadedStores = (
 					loadedRecipes
 				]) => {
 					texturesStore.set(loadedTextures);
-					patchouliStore.set(preparePatchouli(loadedPatchouliCategories, loadedPatchouliEntries));
+					patchouliStore.set(
+						preparePatchouli(loadedPatchouliCategories, loadedPatchouliEntries, 'ars_nouveau')
+					);
 					languagesStore.set(loadedLanguages);
 					recipesStore.set(loadedRecipes);
 					storesLoaded.set(true);

@@ -1,38 +1,18 @@
-import type JSZip from 'jszip';
 import type { JSZipObject } from 'jszip';
-import { getFileName } from '../utils/fileName';
+import { getFileName } from '$lib/utils/fileName';
 
-const isTexture = (zipObject: JSZipObject) =>
-	!zipObject.dir &&
-	(zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/items') ||
-		// Images in Patchouli Book
-		zipObject.name.includes('src/main/resources/assets/ars_nouveau/textures/gui/entries'));
-export const isPatchouliCategory = (zipObject: JSZipObject) =>
-	!zipObject.dir &&
-	zipObject.name.includes(
-		'src/main/resources/data/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
-	);
-export const isPatchouliEntry = (zipObject: JSZipObject) =>
-	!zipObject.dir &&
-	zipObject.name.includes(
-		'src/main/resources/data/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
-	);
-export const isRecipe = (zipObject: JSZipObject) =>
-	!zipObject.dir && zipObject.name.includes('src/main/resources/data/ars_nouveau/recipes');
-export const isLanguage = (zipObject: JSZipObject) =>
-	!zipObject.dir && zipObject.name.includes('src/main/resources/assets/ars_nouveau/lang');
-
-export const getTextureFiles = (zip: JSZip) => {
+export const getTextureFiles = (
+	matcher: (filename: string) => boolean,
+	zippedFiles: Array<JSZipObject>,
+	modId: string
+) => {
 	return Promise.all(
-		Object.values(zip.files)
-			.filter(isTexture)
+		zippedFiles
+			.filter((zippedFile) => matcher(zippedFile.name))
 			.map((file) =>
-				zip
-					.file(file.name)
-					?.async('base64')
-					.then((value) => {
-						return { [getFileName(file.name)]: value };
-					})
+				file.async('base64').then((value) => {
+					return { [`${modId}:${getFileName(file.name)}`]: value };
+				})
 			)
 	).then((resultingArray) => {
 		return resultingArray.reduce((previousValue, currentValue) => {
@@ -41,19 +21,28 @@ export const getTextureFiles = (zip: JSZip) => {
 	});
 };
 
-export const getMatchingJSONFiles = (matcher: (value: JSZipObject) => boolean, zip: JSZip) => {
+export const getMatchingJSONFiles = (
+	matcher: (filename: string) => boolean,
+	zippedFiles: Array<JSZipObject>,
+	additionalTransformation?: (objectToTransform: object) => object
+) => {
 	return Promise.all(
-		Object.values(zip.files)
-			.filter(matcher)
+		zippedFiles
+			.filter((zippedFile) => matcher(zippedFile.name))
 			.map((file) =>
-				zip
-					.file(file.name)
-					?.async('string')
-					.then((value) => {
-						return { [getFileName(file.name)]: JSON.parse(value) };
-					})
+				file.async('string').then((value) => {
+					const json = JSON.parse(value);
+					return {
+						[getFileName(file.name)]: additionalTransformation
+							? additionalTransformation(json)
+							: json
+					};
+				})
 			)
 	).then((resultingArray) => {
+		if (additionalTransformation) {
+			resultingArray = resultingArray.map(additionalTransformation);
+		}
 		return resultingArray.reduce((previousValue, currentValue) => {
 			return { ...previousValue, ...currentValue };
 		}, {});
