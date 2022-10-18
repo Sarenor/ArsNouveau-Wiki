@@ -28,9 +28,10 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 	ars_elemental: {
 		texturePredicate: (filename: string) => {
 			return (
-				filename.includes('src/main/resources/assets/ars_arsenal/textures/item/') ||
-				filename.includes('src/main/resources/assets/ars_nouveau/textures/items/') ||
-				filename.includes('src/main/resources/assets/ars_elemental/textures/item/')
+				(filename.includes('src/main/resources/assets/ars_arsenal/textures/item/') ||
+					filename.includes('src/main/resources/assets/ars_nouveau/textures/items/') ||
+					filename.includes('src/main/resources/assets/ars_elemental/textures/item/')) &&
+				!(filename.includes('watery_grave.png') || filename.includes('conjure_terrain.png'))
 			);
 		},
 		patchouliCategoryPredicate: (filename: string) => {
@@ -69,14 +70,23 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			);
 		},
 		recipePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/data/ars_instrumentum/recipes/');
+			return (
+				filename.includes('src/main/resources/data/ars_instrumentum/recipes/') ||
+				filename.includes('src/generated/resources/data/ars_instrumentum/recipes') ||
+				filename.includes('src/generated/resources/data/ars_instrumentum/recipes/apparatus') ||
+				filename.includes('src/generated/resources/data/ars_instrumentum/recipes/imbuement')
+			);
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_instrumentum/lang');
+			return (
+				filename.includes('src/main/resources/assets/ars_instrumentum/lang') ||
+				filename.includes('src/generated/resources/assets/ars_instrumentum/lang')
+			);
 		},
-		repositoryId: 'Sarenor/Ars-Instrumentum'
+		repositoryId: 'Sarenor/Ars-Instrumentum',
+		repositoryBranch: 'documentation'
 	},
-	ars_omega: {
+	arsomega: {
 		texturePredicate: (filename: string) => {
 			return (
 				filename.includes('src/main/resources/assets/arsomega/textures/items/') ||
@@ -181,6 +191,6 @@ export const modlist = [
 	'ars_nouveau',
 	'ars_elemental',
 	'ars_instrumentum',
-	'ars_omega',
+	'arsomega',
 	'too_many_glpyhs'
 ];

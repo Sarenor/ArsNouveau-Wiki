@@ -42,7 +42,7 @@
                 <img alt="The Ars Instrumentum Logo" slot="lead" src="/wizards_armarium.png"/>
                 Ars Instrumentum
             </ListBoxItem>
-            <ListBoxItem value={'ars_omega'}>
+            <ListBoxItem value={'arsomega'}>
                 <img alt="The Ars Omega Logo" slot="lead" src="/demonic_crystal.png"/>
                 Ars Omega
             </ListBoxItem>

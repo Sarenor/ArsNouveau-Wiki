@@ -81,6 +81,8 @@ export const resolveTag = (tag: string): string | undefined => {
 				return 'Any Starby bed';
 			case 'seeds':
 				return 'minecraft:wheat_seeds';
+			case 'wilden_drop':
+				return 'Any wilden Drop';
 			case 'dyes':
 				switch (tagParts[1]) {
 					case 'blue':
@@ -124,9 +126,39 @@ export const resolveTag = (tag: string): string | undefined => {
 				switch (tagParts[1]) {
 					case 'nether_wart':
 						return 'minecraft:nether_wart';
+					default:
+						return 'unknown crop';
 				}
+			}
+			case 'dusts': {
+				switch (tagParts[1]) {
+					case 'redstone':
+						return 'minecraft:redstone';
+					case 'glowstone':
+						return 'minecraft:glowstone_dust';
+					default:
+						return 'unkown dust';
+				}
+			}
+			case 'logs': {
+				switch (tagParts[1]) {
+					case 'archwood':
+						return 'Any Archwood log';
+					default:
+						return 'Any log';
+				}
+			}
+			case 'tier_4_ingredient': {
+				return 'Any Ars Omega T4 ingredient';
+			}
+			case 'tier_4_essence': {
+				return 'Any Ars Omega T4 essence';
+			}
+			case 'tier_4_catalyst': {
+				return 'Any Ars Omega T4 catalyst';
 			}
 		}
 	}
+	console.log(`Tag not found: ${tag}`);
 	return undefined;
 };

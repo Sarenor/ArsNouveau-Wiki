@@ -15,12 +15,13 @@
     }
     const getName = (entry: string) => {
         const pathParts = entry.split(":").pop().split("/")
-        if (getLabelWithCurrentValues($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name)) {
+        if ($patchouliStore[pathParts[0]] && $patchouliStore[pathParts[0]].entries && getLabelWithCurrentValues($patchouliStore[pathParts[0]].entries[pathParts[1]]?.name)) {
             return $patchouliStore[pathParts[0]].entries[pathParts[1]]?.name;
         } else {
-            return undefined;
+            return 'none because the mod Author put an invalid link here';
         }
     }
+    $: console.log(JSON.stringify(entries))
 
 </script>
 

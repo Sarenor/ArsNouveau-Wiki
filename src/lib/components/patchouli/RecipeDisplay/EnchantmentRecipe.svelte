@@ -11,6 +11,9 @@
         if (label === 'ars_nouveau:reactive') {
             return getLabelWithCurrentValues(`enchantment.ars_nouveau.${getIdFromResourceLocation(label)}`)
         }
+        if (label === "arsomega:proactive") {
+            return getLabelWithCurrentValues(`enchantment.arsomega.${getIdFromResourceLocation(label)}`)
+        }
         return getLabelWithCurrentValues(`enchantment.minecraft.${getIdFromResourceLocation(label)}`)
     }
 

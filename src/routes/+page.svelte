@@ -48,5 +48,6 @@
     </ul>
     <p>Not all Addons are available for the current version and addon documentation functionality is less tested than
         Ars Nouveau Wiki functionality. Use at your own risk.</p>
-    <p>Direct links to addon pages are currently not supported.</p>
+    <p>Direct links to addon pages or refreshing addon pages is currently not supported, since the server doesn't know
+        which addons to load.</p>
 </div>
