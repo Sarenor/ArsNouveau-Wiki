@@ -12,7 +12,6 @@
     });
 
     export let mobile: boolean
-    const elementalIcons = ['/air_focus.png', '/fire_focus.png', '/water_focus.png', '/earth_focus.png']
 </script>
 
 <style>
@@ -31,7 +30,7 @@
     <div class="card card-body" class:menu-tl={mobile} data-menu="addonMenu" style="width: 240px">
         <ListBox selected={selectedAddonStore}>
             <ListBoxItem value={'ars_elemental'}>
-                <img alt="The Ars Elemental Logo" slot="lead" src={elementalIcons[Math. floor(Math. random() * (4))]}/>
+                <img alt="The Ars Elemental Logo" slot="lead" src="/ars_elemental_logo.png"/>
                 Ars Elemental
             </ListBoxItem>
             <ListBoxItem value={'ars_gears'}>
@@ -41,6 +40,10 @@
             <ListBoxItem value={'ars_instrumentum'}>
                 <img alt="The Ars Instrumentum Logo" slot="lead" src="/wizards_armarium.png"/>
                 Ars Instrumentum
+            </ListBoxItem>
+            <ListBoxItem value={'ars_mage_fight'}>
+                <img alt="The Ars Mage Fight Logo" slot="lead" src="/black_hole.png"/>
+                Ars Mage Fight
             </ListBoxItem>
             <ListBoxItem value={'arsomega'}>
                 <img alt="The Ars Omega Logo" slot="lead" src="/demonic_crystal.png"/>

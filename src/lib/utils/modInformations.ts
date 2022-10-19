@@ -138,30 +138,56 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		},
 		repositoryId: 'Cycro54/Ars_GEARs'
 	},
+
+	ars_mage_fight: {
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('src/main/resources/assets/ars_mage_fight/textures') ||
+				filename.includes('src/main/resources/assets/ars_nouveau/textures/items/')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/data/ars_mage_fight/recipes/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_mage_fight/lang');
+		},
+		repositoryId: 'Cycro54/Ars_Mage_Fight'
+	},
 	ars_scalaes: {
 		texturePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/ars_scalaes/textures/item/');
 		},
 		patchouliCategoryPredicate: (filename: string) => {
 			return filename.includes(
-				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/categories/'
+				'src/main/resources/data/ars_scalaes/patchouli_books/scalaes/en_us/categories/'
 			);
 		},
 		patchouliEntryPredicate: (filename: string) => {
 			return filename.includes(
-				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/entries/'
+				'src/main/resources/data/ars_scalaes/patchouli_books/scalaes/en_us/entries/'
 			);
 		},
 		recipePredicate: (filename: string) => {
 			return (
-				filename.includes('src/generated/resources/data/ars_scalaes/recipes/') ||
+				filename.includes('src/generated/resources/data/ars_scalaes/recipes') ||
 				filename.includes('src/main/resources/data/ars_scalaes/recipes/')
 			);
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_gears/lang');
+			return filename.includes('ssrc/main/resources/assets/ars_scalaes/lang');
 		},
-		repositoryId: 'Cycro54/Ars_GEARs'
+		repositoryId: 'Alexthw46/Ars-Scalaes'
 	},
 	too_many_glyphs: {
 		texturePredicate: (filename: string) => {
@@ -191,6 +217,7 @@ export const modlist = [
 	'ars_nouveau',
 	'ars_elemental',
 	'ars_instrumentum',
+	'ars_mage_fight',
 	'arsomega',
 	'too_many_glpyhs'
 ];
