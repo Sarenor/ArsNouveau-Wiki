@@ -166,7 +166,15 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 	},
 	ars_scalaes: {
 		texturePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_scalaes/textures/item/');
+			return (
+				filename.includes('src/main/resources/assets/ars_scalaes/textures/item/') &&
+				!(
+					filename.includes('expand.png') ||
+					filename.includes('resize.png') ||
+					filename.includes('shrink.png') ||
+					filename.includes('morph.png')
+				)
+			);
 		},
 		patchouliCategoryPredicate: (filename: string) => {
 			return filename.includes(
@@ -185,7 +193,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			);
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('ssrc/main/resources/assets/ars_scalaes/lang');
+			return filename.includes('src/main/resources/assets/ars_scalaes/lang');
 		},
 		repositoryId: 'Alexthw46/Ars-Scalaes'
 	},
