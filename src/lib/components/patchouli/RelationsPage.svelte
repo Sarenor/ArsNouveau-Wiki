@@ -21,7 +21,6 @@
             return 'none because the mod Author put an invalid link here';
         }
     }
-    $: console.log(JSON.stringify(entries))
 
 </script>
 
