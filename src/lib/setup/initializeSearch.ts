@@ -32,20 +32,20 @@ export const initializeSearch = (
 ) => {
 	const searchCandidates: Array<App.SearchCandidate> = [];
 	if (categories) {
-		Object.values(categories).forEach((category) => {
+		Object.entries(categories).forEach(([key, category]) => {
 			searchCandidates.push({
 				title: getLabelWithCurrentValues(category.name) || '',
 				text: getLabelWithCurrentValues(category.description) || '',
-				href: `/category/${category.id}`
+				href: `/category/${key}`
 			});
 		});
 	}
 	if (entries) {
-		Object.values(entries).forEach((entry) => {
+		Object.entries(entries).forEach(([key, entry]) => {
 			searchCandidates.push({
 				title: getLabelWithCurrentValues(entry.name) || '',
 				text: getEntryText(entry) || '',
-				href: `/category/${entry.category}/entry/${entry.name?.split('.').pop()}`
+				href: `/category/${entry.category}/entry/${key}`
 			});
 		});
 	}
