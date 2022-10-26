@@ -1,27 +1,10 @@
-<script context="module" lang="ts">
-    import {getTexture} from "$lib/textures";
-    import {getIdFromResourceLocation} from "$lib/utils/idResolver";
-
-    const getItemSrc = (item: string, textures: App.TextureDictionary) => {
-        let src = getTexture(item, textures)
-        const itemId = getIdFromResourceLocation(item);
-        if (src === 'Unknown Texture') {
-            if (['clock', 'compass'].includes(itemId)) {
-                src = `/minecraft/textures/item/${itemId}_12.png`
-            } else {
-                src = `/minecraft/textures/item/${itemId}.png`
-            }
-        }
-        return src;
-    }
-</script>
-
 <script lang="ts">
     import {texturesStore} from "$lib/stores/fileStore";
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
     import {getBlockOrItemLabel} from "$lib/languages";
     import {labelStore} from "$lib/stores/languageStore";
     import {modlist} from "$lib/utils/modInformations";
+    import {getItemSrc} from "$lib/textures";
 
     export let item: string;
 

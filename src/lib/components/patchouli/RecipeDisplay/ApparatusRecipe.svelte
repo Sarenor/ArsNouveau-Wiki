@@ -24,6 +24,7 @@
             {/each}
         </div>
     </div>
+    <Plus/>
     <div class="card card-body">
         <div class="flex flex-col items-center justify-center craftingGridItem">
             Reagent:
