@@ -7,3 +7,5 @@ export const storeCurrentUrl: Writable<string | undefined> = writable(undefined)
 
 // Persists the mobile-only nav drawer 'open' state
 export const storeMobileDrawer: Writable<boolean> = writable(false);
+
+export const currentExpandedCategory: Writable<string> = writable('');

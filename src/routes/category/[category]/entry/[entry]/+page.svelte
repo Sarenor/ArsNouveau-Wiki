@@ -3,6 +3,7 @@
     import PatchouliPage from '$lib/components/patchouli/PatchouliPage.svelte';
     import Label from "$lib/components/Label.svelte";
     import {labelStore} from "$lib/stores/languageStore";
+    import {currentExpandedCategory} from "$lib/stores/uiState";
 
     /** @type {import('./$types').PageData} */
     export let data: App.PageData;
@@ -10,6 +11,7 @@
     $: containingCategory = $patchouliStore[data?.category];
     $: displayedEntry = containingCategory.entries[data?.entry];
     $: entryName = $labelStore(displayedEntry?.name);
+    $: $currentExpandedCategory = data?.category ? data.category : $currentExpandedCategory
 </script>
 
 <svelte:head><title>{entryName}</title></svelte:head>
