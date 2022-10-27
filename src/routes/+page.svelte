@@ -25,7 +25,13 @@
         <li>
             <a href="https://www.curseforge.com/minecraft/mc-mods/ars-instrumentum" rel="noopener noreferrer"
                target="_blank">
-                Ars Instrumentum (Beta, repository doesn't have all the necessary information)
+                Ars Instrumentum
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-mage-fight" rel="noopener noreferrer"
+               target="_blank">
+                Ars Mage Fight
             </a>
         </li>
         <li>
@@ -36,7 +42,7 @@
         <li>
             <a href="https://www.curseforge.com/minecraft/mc-mods/ars-scalaes" rel="noopener noreferrer"
                target="_blank">
-                Ars Scalaes (Beta, repository doesn't have all the necessary information)
+                Ars Scalaes
             </a>
         </li>
         <li>

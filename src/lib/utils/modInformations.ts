@@ -23,7 +23,8 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		languagePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/ars_nouveau/lang');
 		},
-		repositoryId: 'baileyholl/Ars-Nouveau'
+		repositoryId: 'baileyholl/Ars-Nouveau',
+		name: 'Ars Nouveau'
 	},
 	ars_elemental: {
 		texturePredicate: (filename: string) => {
@@ -53,7 +54,33 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		languagePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/ars_elemental/lang/');
 		},
-		repositoryId: 'Alexthw46/Ars-Elemental'
+		repositoryId: 'Alexthw46/Ars-Elemental',
+		name: 'Ars Elemental',
+		icon: '/ars_elemental_logo.png'
+	},
+	ars_gears: {
+		texturePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_gears/textures');
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/data/ars_gears/recipes/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_gears/lang');
+		},
+		repositoryId: 'Cycro54/Ars_GEARs',
+		name: 'Ars G.E.A.R.S',
+		icon: '/arcane_combat_gear.png'
 	},
 	ars_instrumentum: {
 		texturePredicate: (filename: string) => {
@@ -84,7 +111,36 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			);
 		},
 		repositoryId: 'Sarenor/Ars-Instrumentum',
-		repositoryBranch: 'documentation'
+		repositoryBranch: 'documentation',
+		name: 'Ars Instrumentum',
+		icon: '/wizards_armarium.png'
+	},
+	ars_mage_fight: {
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('src/main/resources/assets/ars_mage_fight/textures') ||
+				filename.includes('src/main/resources/assets/ars_nouveau/textures/items/')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/data/ars_mage_fight/recipes/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/ars_mage_fight/lang');
+		},
+		repositoryId: 'Cycro54/Ars_Mage_Fight',
+		name: 'Ars Mage Fight',
+		icon: '/black_hole.png'
 	},
 	arsomega: {
 		texturePredicate: (filename: string) => {
@@ -114,55 +170,9 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			return filename.includes('src/main/resources/assets/arsomega/lang');
 		},
 		repositoryId: 'dkmk100/ArsOmega',
-		repositoryBranch: '1.18.2-main'
-	},
-	ars_gears: {
-		texturePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_gears/textures');
-		},
-		patchouliCategoryPredicate: (filename: string) => {
-			return filename.includes(
-				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/categories/'
-			);
-		},
-		patchouliEntryPredicate: (filename: string) => {
-			return filename.includes(
-				'src/main/resources/data/ars_gears/patchouli_books/worn_notebook/en_us/entries/'
-			);
-		},
-		recipePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/data/ars_gears/recipes/');
-		},
-		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_gears/lang');
-		},
-		repositoryId: 'Cycro54/Ars_GEARs'
-	},
-
-	ars_mage_fight: {
-		texturePredicate: (filename: string) => {
-			return (
-				filename.includes('src/main/resources/assets/ars_mage_fight/textures') ||
-				filename.includes('src/main/resources/assets/ars_nouveau/textures/items/')
-			);
-		},
-		patchouliCategoryPredicate: (filename: string) => {
-			return filename.includes(
-				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/categories/'
-			);
-		},
-		patchouliEntryPredicate: (filename: string) => {
-			return filename.includes(
-				'src/main/resources/data/ars_mage_fight/patchouli_books/worn_notebook/en_us/entries/'
-			);
-		},
-		recipePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/data/ars_mage_fight/recipes/');
-		},
-		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_mage_fight/lang');
-		},
-		repositoryId: 'Cycro54/Ars_Mage_Fight'
+		repositoryBranch: '1.18.2-main',
+		name: 'Ars Omega',
+		icon: '/demonic_crystal.png'
 	},
 	ars_scalaes: {
 		texturePredicate: (filename: string) => {
@@ -195,7 +205,9 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		languagePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/ars_scalaes/lang');
 		},
-		repositoryId: 'Alexthw46/Ars-Scalaes'
+		repositoryId: 'Alexthw46/Ars-Scalaes',
+		name: 'Ars Scalaes',
+		icon: '/scalaes.png'
 	},
 	too_many_glyphs: {
 		texturePredicate: (filename: string) => {
@@ -217,15 +229,20 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		languagePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/ars_nouveau/lang');
 		},
-		repositoryId: 'DerringersMods/TooManyGlyphs'
+		repositoryId: 'DerringersMods/TooManyGlyphs',
+		name: 'Too Many Glyphs',
+		icon: '/chaining.png'
 	}
 };
 
-export const modlist = [
-	'ars_nouveau',
+export const addonList = [
 	'ars_elemental',
+	'ars_gears',
 	'ars_instrumentum',
 	'ars_mage_fight',
 	'arsomega',
-	'too_many_glpyhs'
+	'ars_scalaes',
+	'too_many_glyphs'
 ];
+
+export const modlist = ['ars_nouveau'].concat(addonList);

@@ -170,5 +170,7 @@ declare namespace App {
 		languagePredicate: (filename: string) => boolean;
 		repositoryId: string;
 		repositoryBranch?: string;
+		icon?: string;
+		name: string;
 	}
 }
