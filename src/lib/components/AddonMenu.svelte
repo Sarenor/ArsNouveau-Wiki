@@ -4,6 +4,7 @@
     import {subscribeToAddonStore} from "$lib/setup/loadAddonFiles";
     import {onMount} from "svelte";
     import {browser} from '$app/environment';
+    import {addonList, modInformations} from "$lib/utils/modInformations.js";
 
     onMount(() => {
         if (browser) {
@@ -29,34 +30,12 @@
     </button>
     <div class="card card-body" class:menu-tl={mobile} data-menu="addonMenu" style="width: 240px">
         <ListBox selected={selectedAddonStore}>
-            <ListBoxItem value={'ars_elemental'}>
-                <img alt="The Ars Elemental Logo" slot="lead" src="/ars_elemental_logo.png"/>
-                Ars Elemental
-            </ListBoxItem>
-            <ListBoxItem value={'ars_gears'}>
-                <img alt="The Ars G.E.A.R.S Logo" slot="lead" src="/arcane_combat_gear.png"/>
-                Ars G.E.A.R.S
-            </ListBoxItem>
-            <ListBoxItem value={'ars_instrumentum'}>
-                <img alt="The Ars Instrumentum Logo" slot="lead" src="/wizards_armarium.png"/>
-                Ars Instrumentum
-            </ListBoxItem>
-            <ListBoxItem value={'ars_mage_fight'}>
-                <img alt="The Ars Mage Fight Logo" slot="lead" src="/black_hole.png"/>
-                Ars Mage Fight
-            </ListBoxItem>
-            <ListBoxItem value={'arsomega'}>
-                <img alt="The Ars Omega Logo" slot="lead" src="/demonic_crystal.png"/>
-                Ars Omega
-            </ListBoxItem>
-            <ListBoxItem value={'ars_scalaes'}>
-                <img alt="The Ars Scalaes Logo" slot="lead" src="/scalaes.png"/>
-                Ars Scalaes
-            </ListBoxItem>
-            <ListBoxItem value={'too_many_glyphs'}>
-                <img alt="The Too Many Glyphs Logo" slot="lead" src="/chaining.png"/>
-                Too Many Glyphs
-            </ListBoxItem>
+            {#each addonList as addon}
+                <ListBoxItem value={addon}>
+                    <img alt={`The ${modInformations[addon].name} Logo`} slot="lead" src={modInformations[addon].icon}/>
+                    {modInformations[addon].name}
+                </ListBoxItem>
+            {/each}
         </ListBox>
     </div>
 </span>

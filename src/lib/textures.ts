@@ -1,8 +1,18 @@
 import { getIdFromResourceLocation } from '$lib/utils/idResolver';
 
 const mapSpecialTextures = (texture: string) => {
+	if (!texture) {
+		return '';
+	}
+
+	if (texture.includes('glyph_')) {
+		return texture.replace('glyph_', '');
+	}
 	if (texture === 'ars_nouveau:dowsing_rod') {
 		return 'ars_nouveau:dowsing_rod_100';
+	}
+	if (texture === 'ars_nouveau:spell_parchment') {
+		return 'ars_nouveau:scroll_inscribed';
 	}
 	if (texture.startsWith('ars_nouveau:potion_flask')) {
 		return 'ars_nouveau:potion_flask';
@@ -15,24 +25,6 @@ const mapSpecialTextures = (texture: string) => {
 	}
 	if (texture === 'ars_nouveau:mana_gem_block') {
 		return 'ars_nouveau:source_gem_block';
-	}
-	if (texture === 'ars_nouveau:glyph_snare') {
-		return 'ars_nouveau:snare';
-	}
-	if (texture === 'ars_nouveau:glyph_amplify') {
-		return 'ars_nouveau:amplify';
-	}
-	if (texture === 'ars_nouveau:glyph_self') {
-		return 'ars_nouveau:self';
-	}
-	if (texture === 'ars_nouveau:glyph_blink') {
-		return 'ars_nouveau:blink';
-	}
-	if (texture === 'ars_nouveau:glyph_gust') {
-		return 'ars_nouveau:gust';
-	}
-	if (texture === 'ars_nouveau:glyph_leap') {
-		return 'ars_nouveau:leap';
 	}
 	if (texture === 'ars_nouveau:glyph_advanced_amplify') {
 		return 'arsomega:advanced_amplify';
@@ -93,6 +85,9 @@ const mapSpecialTextures = (texture: string) => {
 	}
 	if (texture === 'arsomega:arcane_bloom_crop') {
 		return 'arsomega:arcane_bloom';
+	}
+	if (texture === 'ars_nouveau:wither_summon') {
+		return 'arsomega:wither_summon';
 	}
 	return texture;
 };

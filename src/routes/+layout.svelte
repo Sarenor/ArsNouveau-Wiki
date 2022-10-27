@@ -2,13 +2,15 @@
     import '../theme.postcss';
     import '@brainandbones/skeleton/styles/all.css';
     import '../app.postcss';
-    import {AppShell} from '@brainandbones/skeleton';
+    import {AppShell, Toast, toastStore} from '@brainandbones/skeleton';
     import {page} from '$app/stores';
     import {afterNavigate} from '$app/navigation';
     import {storeCurrentUrl} from '$lib/stores/uiState';
     import NavigationDrawer from '$lib/components/navigation/NavigationDrawer.svelte';
     import Navigation from '$lib/components/navigation/Navigation.svelte';
     import HeaderBar from '$lib/components/HeaderBar.svelte';
+    import {selectedAddonStore} from "$lib/stores/addonStore";
+    import {browser} from '$app/environment'
 
     // Lifecycle Events
     afterNavigate(() => {
@@ -20,6 +22,18 @@
             elemPage.scrollTop = 0;
         }
     });
+    selectedAddonStore.subscribe(() => {
+        // Redirect to main page to avoid current page being an addon page that is going to be unloaded
+        if (browser && window.location.pathname !== "/") {
+            window.location.replace("/");
+            toastStore.trigger({
+                message: 'Loading/Unloading addons, redirecting to main page',
+                // Optional:
+                autohide: true,
+                timeout: 3500,
+            })
+        }
+    })
 </script>
 
 <svelte:head>
@@ -41,6 +55,7 @@
 </svelte:head>
 
 <NavigationDrawer/>
+<Toast position="tr"/>
 
 <AppShell>
     <svelte:fragment slot="header">
