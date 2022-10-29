@@ -2,7 +2,7 @@
     import {patchouliStore} from '$lib/stores/fileStore';
     import Label from "$lib/components/Label.svelte";
     import {labelStore} from "$lib/stores/languageStore";
-    import {currentExpandedCategory} from "$lib/stores/uiState";
+    import {currentExpandedCategory, currentPageSource} from "$lib/stores/uiState";
     import AddonInformation from "$lib/components/AddonInformation.svelte";
 
     /** @type {import('./$types').PageData} */
@@ -11,6 +11,7 @@
     $: displayedCategory = $patchouliStore[data?.category];
     $: categoryName = $labelStore(displayedCategory?.name);
     $: $currentExpandedCategory = data?.category ? data.category : $currentExpandedCategory
+    $: $currentPageSource = displayedCategory ? displayedCategory?.source : $currentPageSource
 </script>
 
 <svelte:head><title>{categoryName}</title></svelte:head>

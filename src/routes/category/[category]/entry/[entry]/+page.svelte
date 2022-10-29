@@ -3,7 +3,7 @@
     import PatchouliPage from '$lib/components/patchouli/PatchouliPage.svelte';
     import Label from "$lib/components/Label.svelte";
     import {labelStore} from "$lib/stores/languageStore";
-    import {currentExpandedCategory} from "$lib/stores/uiState";
+    import {currentExpandedCategory, currentPageSource} from "$lib/stores/uiState";
     import AddonInformation from "$lib/components/AddonInformation.svelte";
 
     /** @type {import('./$types').PageData} */
@@ -13,6 +13,7 @@
     $: displayedEntry = containingCategory.entries[data?.entry];
     $: entryName = $labelStore(displayedEntry?.name);
     $: $currentExpandedCategory = data?.category ? data.category : $currentExpandedCategory
+    $: $currentPageSource = displayedEntry ? displayedEntry?.source : $currentPageSource
 </script>
 
 <svelte:head><title>{entryName}</title></svelte:head>

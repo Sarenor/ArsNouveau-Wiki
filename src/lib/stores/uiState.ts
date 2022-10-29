@@ -9,3 +9,5 @@ export const storeCurrentUrl: Writable<string | undefined> = writable(undefined)
 export const storeMobileDrawer: Writable<boolean> = writable(false);
 
 export const currentExpandedCategory: Writable<string> = writable('');
+
+export const currentPageSource: Writable<string> = writable('');
