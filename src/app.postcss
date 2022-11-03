@@ -45,7 +45,11 @@ body {
 }
 
 .navSelected {
-    @apply !bg-primary-500 !text-white
+    color: rgb(var(--theme-font-color-dark));
+    @apply !bg-primary-500
+}
+.dark .navSelected {
+    color: rgb(var(--theme-font-color-base));
 }
 
 @media (min-width: 1024px) {
@@ -81,6 +85,6 @@ body {
 	}
 }
 
-.summary-lead {
+.accordion-summary-lead {
     flex-shrink: 0
 }
