@@ -99,6 +99,7 @@ export const notDisplayableItems = [
 	'arsomega:mystic_clay',
 	'arsomega:potion_amplifier',
 	'arsomega:arcane_book',
+	'ars_mage_fight:combat_block_item',
 	'minecraft:obsidian',
 	'minecraft:blue_ice',
 	'minecraft:enchanted_golden_apple',

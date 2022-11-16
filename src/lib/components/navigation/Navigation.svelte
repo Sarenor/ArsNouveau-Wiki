@@ -7,8 +7,12 @@
             return undefined;
         }
         if(iconSrc.includes("glyph_")) {
+            if(iconSrc.includes("life_tap") || iconSrc.includes("black_hole") || iconSrc.includes("death_grip")) {
+                return getItemSrc(iconSrc.replace("glyph_", "").replace("ars_nouveau", "ars_mage_fight"), textureStore)
+            }
             return getItemSrc(iconSrc.replace("glyph_", ""), textureStore);
         }
+        //cards
 
         return getItemSrc(iconSrc, textureStore);
     }

@@ -5,7 +5,7 @@
     import LanguageSelection from "$lib/components/LanguageSelection.svelte";
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
     import {browser} from "$app/environment";
-    import AddonMenu from "$lib/components/AddonMenu.svelte";
+    import AddonMenu from "$lib/components/addonMenu/AddonMenu.svelte";
 </script>
 
 <Drawer display="lg:hidden" open={storeMobileDrawer}>
