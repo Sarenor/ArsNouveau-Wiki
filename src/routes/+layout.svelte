@@ -2,7 +2,7 @@
     import '../theme.postcss';
     import '@brainandbones/skeleton/styles/all.css';
     import '../app.postcss';
-    import {AppShell, Toast, toastStore} from '@brainandbones/skeleton';
+    import {AppShell, Modal, Toast, toastStore} from '@brainandbones/skeleton';
     import {page} from '$app/stores';
     import {afterNavigate} from '$app/navigation';
     import {currentPageSource, storeCurrentUrl} from '$lib/stores/uiState';
@@ -12,6 +12,14 @@
     import {selectedAddonStore} from "$lib/stores/addonStore";
     import {browser} from '$app/environment'
     import {get} from "svelte/store";
+    import {subscribeToAddonStore} from "$lib/setup/loadAddonFiles";
+    import {onMount} from "svelte";
+
+    onMount(() => {
+        if (browser) {
+            return subscribeToAddonStore()
+        }
+    });
 
     // Lifecycle Events
     afterNavigate(() => {
@@ -61,6 +69,7 @@
 
 <NavigationDrawer/>
 <Toast position="tr"/>
+<Modal/>
 
 <AppShell>
     <svelte:fragment slot="header">

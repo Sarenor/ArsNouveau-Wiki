@@ -5,7 +5,7 @@
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
     import LanguageSelection from "$lib/components/LanguageSelection.svelte";
-    import AddonMenu from "$lib/components/AddonMenu.svelte";
+    import AddonMenu from "$lib/components/addonMenu/AddonMenu.svelte";
 
     // Drawer Handler
     function drawerOpen(): void {
