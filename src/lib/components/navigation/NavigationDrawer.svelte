@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Drawer} from '@brainandbones/skeleton';
+    import {Drawer} from '@skeletonlabs/skeleton';
     import {storeMobileDrawer} from '$lib/stores/uiState.js';
     import Navigation from '$lib/components/navigation/Navigation.svelte';
     import LanguageSelection from "$lib/components/LanguageSelection.svelte";

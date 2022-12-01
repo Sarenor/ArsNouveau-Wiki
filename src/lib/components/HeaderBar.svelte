@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {AppBar, LightSwitch} from '@brainandbones/skeleton';
+    import {AppBar, LightSwitch} from '@skeletonlabs/skeleton';
     import {storeMobileDrawer} from '$lib/stores/uiState';
     import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';

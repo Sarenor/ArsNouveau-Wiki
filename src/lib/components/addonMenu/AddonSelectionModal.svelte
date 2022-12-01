@@ -1,7 +1,7 @@
 <script lang="ts">
     import {addonList, modInformations} from "$lib/utils/modInformations.js";
     import {selectedAddonStore} from "$lib/stores/addonStore.js";
-    import {ListBox, ListBoxItem, modalStore} from '@brainandbones/skeleton';
+    import {ListBox, ListBoxItem, modalStore} from '@skeletonlabs/skeleton';
 
     // Props
     /** Exposes parent props to this component. */

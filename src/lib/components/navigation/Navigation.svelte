@@ -22,7 +22,7 @@
     import {currentExpandedCategory, storeCurrentUrl} from '$lib/stores/uiState.js';
     import {patchouliStore} from '$lib/stores/fileStore';
     import {storeMobileDrawer} from '$lib/stores/uiState';
-    import {AccordionGroup, AccordionItem} from '@brainandbones/skeleton';
+    import {AccordionGroup, AccordionItem} from '@skeletonlabs/skeleton';
     import {afterNavigate} from '$app/navigation';
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
     import Label from "$lib/components/Label.svelte";

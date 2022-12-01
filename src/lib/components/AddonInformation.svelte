@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {tooltip} from '@brainandbones/skeleton';
+    import {tooltip} from '@skeletonlabs/skeleton';
     import {modInformations} from "$lib/utils/modInformations";
 
     export let addonName: string;

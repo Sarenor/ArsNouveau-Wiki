@@ -1,5 +1,5 @@
 import type { Writable } from 'svelte/store';
-import { localStorageStore } from '@brainandbones/skeleton';
+import { localStorageStore } from '@skeletonlabs/skeleton';
 import { writable } from 'svelte/store';
 
 export const selectedAddonStore: Writable<Array<string>> = localStorageStore('selectedAddons', []);
