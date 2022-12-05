@@ -269,6 +269,7 @@ export const addonList = [
 	'ars_mage_fight',
 	'arsomega',
 	'ars_scalaes',
+	'starbunclemania',
 	'too_many_glyphs'
 ];
 
