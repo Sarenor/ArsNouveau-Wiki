@@ -1,8 +1,8 @@
 <script lang="ts">
     import '../theme.postcss';
-    import '@brainandbones/skeleton/styles/all.css';
+    import '@skeletonlabs/skeleton/styles/all.css';
     import '../app.postcss';
-    import {AppShell, Modal, Toast, toastStore} from '@brainandbones/skeleton';
+    import {AppShell, Modal, Toast, toastStore} from '@skeletonlabs/skeleton';
     import {page} from '$app/stores';
     import {afterNavigate} from '$app/navigation';
     import {currentPageSource, storeCurrentUrl} from '$lib/stores/uiState';
@@ -79,7 +79,7 @@
         <Navigation class="hidden lg:block w-[300px]"/>
     </svelte:fragment>
     <svelte:fragment slot="pageFooter">
-        <footer class="flex justify-end mb-1 mr-1 appFooter"><p>Ars Nouveau Wiki</p></footer>
+        <footer class="flex justify-end mb-1 mr-1"><p>Ars Nouveau Wiki</p></footer>
     </svelte:fragment>
     <div class="m-4">
         <slot/>

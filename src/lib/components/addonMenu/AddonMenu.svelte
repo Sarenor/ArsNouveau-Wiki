@@ -1,7 +1,7 @@
 <script lang="ts">
-    import {type ModalComponent, type ModalSettings} from "@brainandbones/skeleton";
+    import {type ModalComponent, type ModalSettings} from "@skeletonlabs/skeleton";
     import AddonSelectionModal from "$lib/components/addonMenu/AddonSelectionModal.svelte";
-    import { modalStore } from '@brainandbones/skeleton';
+    import { modalStore } from '@skeletonlabs/skeleton';
 
     const triggerAddonModal = () => {
         const modalComponent: ModalComponent = {

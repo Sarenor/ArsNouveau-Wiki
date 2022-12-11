@@ -209,6 +209,33 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		name: 'Ars Scalaes',
 		icon: '/scalaes.png'
 	},
+	starbunclemania: {
+		texturePredicate: (filename: string) => {
+			return	filename.includes('src/main/resources/assets/starbunclemania/textures/item/');
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'/src/generated/resources/data/starbunclemania/patchouli_books/starbunclemania/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'/src/generated/resources/data/starbunclemania/patchouli_books/starbunclemania/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return (
+				filename.includes('src/generated/resources/data/starbunclemania/recipes/') ||
+				filename.includes('src/main/resources/data/starbunclemania/recipes/')
+			);
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/main/resources/assets/starbunclemania/lang/');
+		},
+		repositoryId: 'Alexthw46/StarbuncleMania',
+		name: 'Starbuncle Mania',
+		icon: '/starbuncle_charm.png'
+	},
 	too_many_glyphs: {
 		texturePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/toomanyglyphs/textures/items/');
@@ -242,6 +269,7 @@ export const addonList = [
 	'ars_mage_fight',
 	'arsomega',
 	'ars_scalaes',
+	'starbunclemania',
 	'too_many_glyphs'
 ];
 
