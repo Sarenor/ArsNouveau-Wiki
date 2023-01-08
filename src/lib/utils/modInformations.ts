@@ -170,7 +170,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			return filename.includes('src/main/resources/assets/arsomega/lang');
 		},
 		repositoryId: 'dkmk100/ArsOmega',
-		repositoryBranch: '1.18.2-main',
+		repositoryBranch: '1.16.5-main',
 		name: 'Ars Omega',
 		icon: '/demonic_crystal.png'
 	},
