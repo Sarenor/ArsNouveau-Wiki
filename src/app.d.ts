@@ -26,7 +26,7 @@ declare namespace App {
 	}
 
 	interface PatchouliPage {
-		type: 'patchouli_books:text' | 'patchouli_books:crafting' | 'patchouli_books:image' | string;
+		type: 'patchouli:text' | 'patchouli:crafting' | 'patchouli:image' | string;
 		recipe?: string;
 		text?: string;
 		entries?: Array<string>; // Links in the Relations Page

@@ -2,22 +2,26 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 	ars_nouveau: {
 		texturePredicate: (filename: string) => {
 			return (
-				filename.includes('textures/items') ||
+				filename.includes('src/main/resources/assets/ars_nouveau/textures/items') ||
 				// Images in Patchouli Book
-				filename.includes('textures/gui/entries')
+				filename.includes('src/main/resources/assets/ars_nouveau/textures/gui/entries')
 			);
 		},
 		patchouliCategoryPredicate: (filename: string) => {
-			return filename.includes('patchouli_books/worn_notebook/en_us/categories/');
+			return filename.includes(
+				'src/main/resources/data/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
+			);
 		},
 		patchouliEntryPredicate: (filename: string) => {
-			return filename.includes('patchouli_books/worn_notebook/en_us/entries/');
+			return filename.includes(
+				'src/main/resources/data/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
+			);
 		},
 		recipePredicate: (filename: string) => {
-			return filename.includes('recipes');
+			return filename.includes('src/main/resources/data/ars_nouveau/recipes');
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('lang');
+			return filename.includes('src/main/resources/assets/ars_nouveau/lang');
 		},
 		repositoryId: 'baileyholl/Ars-Nouveau',
 		name: 'Ars Nouveau'
@@ -207,7 +211,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 	},
 	starbunclemania: {
 		texturePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/starbunclemania/textures/item/');
+			return	filename.includes('src/main/resources/assets/starbunclemania/textures/item/');
 		},
 		patchouliCategoryPredicate: (filename: string) => {
 			return filename.includes(
