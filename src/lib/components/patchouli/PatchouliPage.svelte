@@ -10,19 +10,19 @@
 
     const getDisplayedComponent = (type: string) => {
         switch (type) {
-            case 'patchouli:text':
+            case 'patchouli_books:text':
             case 'text':
                 return TextPage;
-            case 'patchouli:crafting':
+            case 'patchouli_books:crafting':
             case 'crafting':
                 return CraftingPage;
-            case 'patchouli:link':
+            case 'patchouli_books:link':
             case 'link':
                 return LinkPage;
-            case 'patchouli:relations':
+            case 'patchouli_books:relations':
             case 'relations':
                 return RelationsPage;
-            case 'patchouli:image':
+            case 'patchouli_books:image':
             case 'image':
                 return ImagePage;
             case 'ars_nouveau:apparatus_recipe':
