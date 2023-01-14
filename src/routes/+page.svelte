@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="curseforge.com/minecraft/mc-mods/ars-nouveau-gears" rel="noopener noreferrer" target="_blank">
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-nouveau-gears" rel="noopener noreferrer" target="_blank">
                 Ars G.E.A.R.S
             </a>
         </li>
@@ -37,6 +37,12 @@
         <li>
             <a href="https://www.curseforge.com/minecraft/mc-mods/ars-omega" rel="noopener noreferrer" target="_blank">
                 Ars Omega
+            </a>
+        </li>
+        <li>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-scalaes" rel="noopener noreferrer"
+               target="_blank">
+                Ars Scalaes
             </a>
         </li>
         <li>
