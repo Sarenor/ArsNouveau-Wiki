@@ -46,12 +46,6 @@
             </a>
         </li>
         <li>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/ars-scalaes" rel="noopener noreferrer"
-               target="_blank">
-                Ars Scalaes
-            </a>
-        </li>
-        <li>
             <a href="https://www.curseforge.com/minecraft/mc-mods/too-many-glyphs" rel="noopener noreferrer"
                target="_blank">
                 Too Many Glyphs (Beta, repository doesn't have all the necessary information)
