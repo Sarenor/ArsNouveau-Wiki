@@ -1,4 +1,3 @@
-import JSZip from 'jszip';
 import { preparePatchouli } from '$lib/setup/preparePatchouli';
 import { patchouliStore, recipesStore, storesLoaded, texturesStore } from '$lib/stores/fileStore';
 import { languagesStore, minecraftLanguageStore } from '$lib/stores/languageStore';
@@ -20,8 +19,7 @@ const initalizeMinecraftLanguageStore = (
 const initalizeDynamicallyLoadedStores = (
 	fetch: (info: RequestInfo, init?: RequestInit) => Promise<Response>
 ) => {
-	const url = browser ? apiBaseURL() : '/api/zipball';
-	return fetch(url)
+	return fetch('/ars_nouveau.zip')
 		.then(prepareZip)
 		.then(async function (zip) {
 			return Promise.all([

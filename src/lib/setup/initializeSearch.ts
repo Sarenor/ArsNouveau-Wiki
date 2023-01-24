@@ -7,7 +7,7 @@ import { get } from 'svelte/store';
 const getEntryText = (entry: App.PatchouliEntry) => {
 	let text = '';
 	entry.pages.forEach((page: App.PatchouliPage) => {
-		if (page.type === 'patchouli:text' && page.text) {
+		if (page.type === 'patchouli_books:text' && page.text) {
 			text += getLabelWithCurrentValues(page.text);
 		}
 	});
