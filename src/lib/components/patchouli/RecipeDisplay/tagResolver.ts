@@ -83,6 +83,8 @@ export const resolveTag = (tag: string): string | undefined => {
 				return 'minecraft:wheat_seeds';
 			case 'wilden_drop':
 				return 'Any wilden Drop';
+			case 'saplings':
+				return 'Any sapling';
 			case 'dyes':
 				switch (tagParts[1]) {
 					case 'blue':
