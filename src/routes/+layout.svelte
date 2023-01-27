@@ -2,11 +2,10 @@
     import '../theme.postcss';
     import '@skeletonlabs/skeleton/styles/all.css';
     import '../app.postcss';
-    import {AppShell, Modal, Toast, toastStore} from '@skeletonlabs/skeleton';
+    import {AppShell, Drawer, Modal, Toast, toastStore} from '@skeletonlabs/skeleton';
     import {page} from '$app/stores';
     import {afterNavigate} from '$app/navigation';
     import {currentPageSource, storeCurrentUrl} from '$lib/stores/uiState';
-    import NavigationDrawer from '$lib/components/navigation/NavigationDrawer.svelte';
     import Navigation from '$lib/components/navigation/Navigation.svelte';
     import HeaderBar from '$lib/components/HeaderBar.svelte';
     import {selectedAddonStore} from "$lib/stores/addonStore";
@@ -14,6 +13,9 @@
     import {get} from "svelte/store";
     import {subscribeToAddonStore} from "$lib/setup/loadAddonFiles";
     import {onMount} from "svelte";
+	import LanguageSelection from '$lib/components/LanguageSelection.svelte';
+	import SmartSearch from '$lib/components/Search/SmartSearch.svelte';
+	import AddonMenu from '$lib/components/addonMenu/AddonMenu.svelte';
 
     onMount(() => {
         if (browser) {
@@ -67,7 +69,20 @@
     <title>Ars Nouveau Wiki</title>
 </svelte:head>
 
-<NavigationDrawer/>
+<Drawer>
+    <div class="p-2">
+        <LanguageSelection/>
+    </div>
+    {#if browser}
+        <div class="p-2">
+            <SmartSearch mobile={true}/>
+        </div>
+        <div class="p-2">
+            <AddonMenu/>
+        </div>
+    {/if}
+    <Navigation embedded={true}/>
+</Drawer>
 <Toast position="tr"/>
 <Modal/>
 

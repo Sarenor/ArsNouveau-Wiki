@@ -1,6 +1,5 @@
 <script lang="ts">
-    import {AppBar, LightSwitch} from '@skeletonlabs/skeleton';
-    import {storeMobileDrawer} from '$lib/stores/uiState';
+    import {AppBar, drawerStore, LightSwitch} from '@skeletonlabs/skeleton';
     import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
@@ -9,7 +8,7 @@
 
     // Drawer Handler
     function drawerOpen(): void {
-        storeMobileDrawer.set(true);
+        drawerStore.open();
         scrollSelectionIntoView();
     }
 </script>
@@ -30,7 +29,7 @@
     >
     <svelte:fragment slot="trail">
         <div class="hidden lg:block">
-            <AddonMenu mobile={false}/>
+            <AddonMenu/>
         </div>
         <div class="hidden lg:block">
             <LanguageSelection/>

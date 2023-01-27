@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {type ModalComponent, type ModalSettings} from "@skeletonlabs/skeleton";
+    import type { ModalComponent, ModalSettings} from "@skeletonlabs/skeleton";
     import AddonSelectionModal from "$lib/components/addonMenu/AddonSelectionModal.svelte";
     import { modalStore } from '@skeletonlabs/skeleton';
 

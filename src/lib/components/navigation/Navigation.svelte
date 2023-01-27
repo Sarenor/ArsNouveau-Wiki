@@ -21,8 +21,7 @@
 <script lang="ts">
     import {currentExpandedCategory, storeCurrentUrl} from '$lib/stores/uiState.js';
     import {patchouliStore} from '$lib/stores/fileStore';
-    import {storeMobileDrawer} from '$lib/stores/uiState';
-    import {AccordionGroup, AccordionItem} from '@skeletonlabs/skeleton';
+    import {AccordionGroup, AccordionItem, drawerStore} from '@skeletonlabs/skeleton';
     import {afterNavigate} from '$app/navigation';
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
     import Label from "$lib/components/Label.svelte";
@@ -35,7 +34,7 @@
     // ListItem Click Handler
     function onListItemClick(): void {
         if (!embedded) return;
-        storeMobileDrawer.set(false);
+        drawerStore.close();
     }
 
     $: sortedCategories = Object.values($patchouliStore)
