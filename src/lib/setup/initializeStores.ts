@@ -3,7 +3,6 @@ import { patchouliStore, recipesStore, storesLoaded, texturesStore } from '$lib/
 import { languagesStore, minecraftLanguageStore } from '$lib/stores/languageStore';
 import { getMatchingJSONFiles, getTextureFiles } from '$lib/setup/loadFiles';
 import { browser } from '$app/environment';
-import { apiBaseURL } from '$lib/utils/apiUtils';
 import { initializeSearch } from '$lib/setup/initializeSearch';
 import { modInformations } from '$lib/utils/modInformations';
 import { prepareZip } from '$lib/setup/prepareZip';

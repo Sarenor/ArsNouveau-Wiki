@@ -17,5 +17,5 @@
 {#if modInformations[addonName]?.source !== 'ars_nouveau' && modInformations[addonName]?.icon}
     <img alt={`Added by ${modInformations[addonName].name}`} class="sourceIcon"
          src={modInformations[addonName].icon}
-         use:tooltip={{ content: `Added by ${modInformations[addonName].name}`, color: 'text-accent-500', position }}/>
+         use:tooltip={{ content: `Added by ${modInformations[addonName].name}`, color: 'text-secondary-500', position }}/>
 {/if}

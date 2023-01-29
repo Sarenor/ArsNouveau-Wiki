@@ -165,8 +165,11 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		languagePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/arsomega/lang');
 		},
+		advancementPredicate: (filename: string) => {
+			return filename.includes('src/main/resources/data/arsomega/advancements');
+		},
 		repositoryId: 'dkmk100/ArsOmega',
-		repositoryBranch: '1.16.5-main',
+		repositoryBranch: '1.18.2-beta',
 		name: 'Ars Omega',
 		icon: '/demonic_crystal.png'
 	},

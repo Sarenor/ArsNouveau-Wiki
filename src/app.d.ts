@@ -66,14 +66,14 @@ declare namespace App {
 
 	interface Recipe {
 		type:
-			| 'minecraft:crafting_shaped'
-			| 'minecraft:crafting_shapeless'
-			| 'ars_nouveau:enchanting_apparatus'
-			| 'ars_nouveau:imbuement'
-			| 'ars_nouveau:enchantment'
-			| 'ars_nouveau:glyph'
-			| 'ars_nouveau:armor_upgrade'
-			| 'Unknown Recipe';
+		| 'minecraft:crafting_shaped'
+		| 'minecraft:crafting_shapeless'
+		| 'ars_nouveau:enchanting_apparatus'
+		| 'ars_nouveau:imbuement'
+		| 'ars_nouveau:enchantment'
+		| 'ars_nouveau:glyph'
+		| 'ars_nouveau:armor_upgrade'
+		| 'Unknown Recipe';
 	}
 
 	interface ShapedRecipe extends Recipe {
@@ -140,6 +140,18 @@ declare namespace App {
 		sourceCost: number;
 	}
 
+	interface Advancement {
+		parent: string;
+		display: {
+			description: {
+				translate: string;
+			},
+			title: {
+				translate: string;
+			}
+		}
+	}
+
 	interface PatchouliStore {
 		[x: string]: PatchouliCategory;
 	}
@@ -156,6 +168,10 @@ declare namespace App {
 		[x: string]: string;
 	}
 
+	interface AdvancementStore {
+		[x: string]: Advancement;
+	}
+
 	export interface SearchCandidate {
 		title: string;
 		text: string;
@@ -168,6 +184,7 @@ declare namespace App {
 		patchouliEntryPredicate: (filename: string) => boolean;
 		recipePredicate: (filename: string) => boolean;
 		languagePredicate: (filename: string) => boolean;
+		advancementPredicate?: (filename: string) => boolean;
 		repositoryId: string;
 		repositoryBranch?: string;
 		icon?: string;

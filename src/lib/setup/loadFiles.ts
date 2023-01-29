@@ -24,6 +24,7 @@ export const getTextureFiles = (
 export const getMatchingJSONFiles = (
 	matcher: (filename: string) => boolean,
 	zippedFiles: Array<JSZipObject>,
+	originId: string = '',
 	additionalTransformation?: (objectToTransform: object) => object
 ) => {
 	return Promise.all(
@@ -33,7 +34,7 @@ export const getMatchingJSONFiles = (
 				file.async('string').then((value) => {
 					const json = JSON.parse(value);
 					return {
-						[getFileName(file.name)]: additionalTransformation
+						[originId ? originId + ':' + getFileName(file.name) : getFileName(file.name)]: additionalTransformation
 							? additionalTransformation(json)
 							: json
 					};
