@@ -16,7 +16,7 @@
     $: entryName = $labelStore(displayedEntry?.name);
     $: $currentExpandedCategory = data?.category ? data.category : $currentExpandedCategory
     $: $currentPageSource = displayedEntry ? displayedEntry?.source : $currentPageSource
-    $: advancementTitle = displayedEntry.advancement ? $advancementStore ? $advancementStore[displayedEntry.advancement].display.title.translate : undefined : undefined;
+    $: advancementTitle = displayedEntry.advancement ? $advancementStore ? $advancementStore[displayedEntry.advancement]?.display?.title?.translate : undefined : undefined;
 </script>
 
 <svelte:head><title>{entryName}</title></svelte:head>
