@@ -27,22 +27,24 @@
 </h2>
 
 {#if advancementTitle}
-    <AccordionGroup>
-        <AccordionItem>
-            <svelte:fragment slot="summary">Potential spoilers locked behind achievement <strong class="text-primary-500"><FormattedLabel label={advancementTitle}/></strong></svelte:fragment>
-            <svelte:fragment slot="content">
-                <div class="flex justify-center">
-                    <div class="flex flex-col justify-start items-start max-w-prose h-full m-4">
-                        <div class="flex flex-col">
-                            {#each displayedEntry?.pages as page}
-                                <PatchouliPage patchouliPage={page}/>
-                            {/each}
+    {#key data?.entry}
+        <AccordionGroup>
+            <AccordionItem>
+                <svelte:fragment slot="summary">Potential spoilers locked behind achievement <strong class="text-primary-500"><FormattedLabel label={advancementTitle}/></strong></svelte:fragment>
+                <svelte:fragment slot="content">
+                    <div class="flex justify-center">
+                        <div class="flex flex-col justify-start items-start max-w-prose h-full m-4">
+                            <div class="flex flex-col">
+                                {#each displayedEntry?.pages as page}
+                                    <PatchouliPage patchouliPage={page}/>
+                                {/each}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </svelte:fragment>
-        </AccordionItem>
-    </AccordionGroup>
+                </svelte:fragment>
+            </AccordionItem>
+        </AccordionGroup>
+    {/key}
 {:else}
     <div class="flex justify-center">
         <div class="flex flex-col justify-start items-start max-w-prose h-full m-4">
