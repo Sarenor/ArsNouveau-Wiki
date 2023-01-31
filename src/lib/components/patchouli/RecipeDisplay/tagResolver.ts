@@ -85,6 +85,8 @@ export const resolveTag = (tag: string): string | undefined => {
 				return 'Any wilden Drop';
 			case 'saplings':
 				return 'Any sapling';
+			case 'dirt':
+				return 'Any block of Dirt'
 			case 'dyes':
 				switch (tagParts[1]) {
 					case 'blue':
