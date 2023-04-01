@@ -5,7 +5,7 @@
     import {labelStore} from "$lib/stores/languageStore";
     import {currentExpandedCategory, currentPageSource} from "$lib/stores/uiState";
     import AddonInformation from "$lib/components/AddonInformation.svelte";
-	import { AccordionGroup, AccordionItem } from '@skeletonlabs/skeleton';
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import FormattedLabel from '$lib/components/patchouli/FormattedLabel.svelte';
 
     /** @type {import('./$types').PageData} */
@@ -28,7 +28,7 @@
 
 {#if advancementTitle}
     {#key data?.entry}
-        <AccordionGroup>
+        <Accordion>
             <AccordionItem>
                 <svelte:fragment slot="summary">Potential spoilers locked behind advancement <strong class="text-primary-500"><FormattedLabel label={advancementTitle}/></strong></svelte:fragment>
                 <svelte:fragment slot="content">
@@ -43,7 +43,7 @@
                     </div>
                 </svelte:fragment>
             </AccordionItem>
-        </AccordionGroup>
+        </Accordion>
     {/key}
 {:else}
     <div class="flex justify-center">

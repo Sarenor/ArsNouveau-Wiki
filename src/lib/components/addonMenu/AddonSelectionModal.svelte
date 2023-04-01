@@ -12,7 +12,7 @@
     }
 
     // Base Classes
-    const cBase: string = 'space-y-4';
+    const cBase: string = 'card p-4 w-modal shadow-xl space-y-4';
 </script>
 
 <style>
@@ -24,9 +24,9 @@
 </style>
 
 <div class="modal-example-form {cBase}">
-    <ListBox selected={selectedAddonStore}>
+    <ListBox multiple>
         {#each addonList as addon}
-            <ListBoxItem value={addon}>
+            <ListBoxItem value={addon} bind:group={$selectedAddonStore} name="addons">
                 <img alt={`The ${modInformations[addon].name} Logo`} slot="lead" src={modInformations[addon].icon}/>
                 {modInformations[addon].name}
             </ListBoxItem>

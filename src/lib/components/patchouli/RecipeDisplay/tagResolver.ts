@@ -48,6 +48,8 @@ export const resolveTag = (tag: string): string | undefined => {
 						return 'block.minecraft.lapis_block';
 					case 'emerald':
 						return 'block.minecraft.emerald_block';
+					case 'quartz':
+						return 'block.minecraft.quartz_block';
 					default:
 						return undefined;
 				}
@@ -70,7 +72,7 @@ export const resolveTag = (tag: string): string | undefined => {
 			case 'fishes':
 				return 'Any fish';
 			case 'stone':
-				return 'Any smooth stone';
+				return 'Any stone';
 			case 'glass':
 				return 'Any glass';
 			case 'buttons':

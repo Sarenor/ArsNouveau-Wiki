@@ -68,6 +68,7 @@
         role="search"
 >
     <input
+            class="input"
             autocomplete="off"
             bind:this={ref}
             bind:value

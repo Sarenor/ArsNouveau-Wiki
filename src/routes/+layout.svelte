@@ -16,6 +16,10 @@
 	import LanguageSelection from '$lib/components/LanguageSelection.svelte';
 	import SmartSearch from '$lib/components/Search/SmartSearch.svelte';
 	import AddonMenu from '$lib/components/addonMenu/AddonMenu.svelte';
+    import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+    import { storePopup } from '@skeletonlabs/skeleton';
+
+    storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
     onMount(() => {
         if (browser) {

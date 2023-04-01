@@ -21,7 +21,7 @@
 <script lang="ts">
     import {currentExpandedCategory, storeCurrentUrl} from '$lib/stores/uiState.js';
     import {patchouliStore} from '$lib/stores/fileStore';
-    import {AccordionGroup, AccordionItem, drawerStore} from '@skeletonlabs/skeleton';
+    import {Accordion, AccordionItem, drawerStore} from '@skeletonlabs/skeleton';
     import {afterNavigate} from '$app/navigation';
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
     import Label from "$lib/components/Label.svelte";
@@ -54,7 +54,7 @@
 </style>
 
 <div class="mb-8 {$$props.class || ''}">
-    <AccordionGroup>
+    <Accordion>
     {#each sortedCategories as category, i}
         <AccordionItem open={$currentExpandedCategory === category.id}>
             <svelte:fragment slot="lead">
@@ -92,5 +92,5 @@
             </svelte:fragment>
         </AccordionItem>
     {/each}
-    </AccordionGroup>
+    </Accordion>
 </div>

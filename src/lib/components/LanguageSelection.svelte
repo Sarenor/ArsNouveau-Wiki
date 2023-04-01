@@ -2,7 +2,7 @@
     import {chosenLanguageStore, updateMinecraftLanguageStore} from "$lib/stores/languageStore.js";
     import {updateSearch} from "$lib/setup/initializeSearch";
 
-    let chosenLanguage
+    let chosenLanguage: string;
     const onChange = () => {
         $chosenLanguageStore = chosenLanguage;
         updateMinecraftLanguageStore(chosenLanguage);
@@ -10,7 +10,7 @@
     }
 </script>
 
-<select bind:value={chosenLanguage} id="color" name="color" on:change={onChange}>
+<select class="select" bind:value={chosenLanguage} id="language" name="language" on:change={onChange}>
     <option value="en_us">English</option>
     <option value="es_es">Spanish</option>
     <option value="ja_jp">Japanese</option>
