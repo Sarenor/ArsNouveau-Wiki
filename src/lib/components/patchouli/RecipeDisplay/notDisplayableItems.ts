@@ -70,6 +70,10 @@ export const notDisplayableItems = [
 	'ars_nouveau:falseweave',
 	'ars_nouveau:ghostweave',
 	'ars_nouveau:sky_block',
+	'ars_nouveau:repository',
+	'ars_nouveau:archwood_chest',
+	'ars_nouveau:storage_lectern',
+	'ars_nouveau:item_detector',
 	'ars_elemental:spell_horn',
 	'ars_elemental:anima_essence',
 	'ars_gears:stick_cross',
@@ -166,5 +170,6 @@ export const notDisplayableItems = [
 	'minecraft:iron_block',
 	'minecraft:diamond_block',
 	'minecraft:stone',
-	'minecraft:dirt'
+	'minecraft:dirt',
+	'minecraft:lectern',
 ];

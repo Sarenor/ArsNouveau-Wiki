@@ -8,7 +8,8 @@
         Keybinds and other things.
         It can also be a bit janky, with missing names or unexpected errors.</p>
     <p>If you encounter any issues, please reach out in the Ars Nouveau Discord found <a
-            href="/category/mod_news/entry/mod_news">here!</a></p>
+            href="/category/mod_news/entry/mod_news" rel="noopener noreferrer">here</a> or submit an issue
+            <a href="https://github.com/Sarenor/arsnouveau-wiki/issues/new" rel="noopener noreferrer">here</a>!</p>
     <p>You can now select which Addon Mods you want to include in the wiki! Currently available:</p>
     <ul class="list-disc pl-8">
         <li>
