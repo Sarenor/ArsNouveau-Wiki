@@ -157,6 +157,9 @@ export const resolveTag = (tag: string): string | undefined => {
 			case 'wooden_pressure_plates': {
 				return 'Any wooden pressure plate';
 			}
+			case 'obsidian': {
+				return 'Any Obsidian';
+			}
 			case 'tier_4_ingredient': {
 				return 'Any Ars Omega T4 ingredient';
 			}
