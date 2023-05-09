@@ -22,6 +22,30 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		repositoryId: 'baileyholl/Ars-Nouveau',
 		name: 'Ars Nouveau'
 	},
+	ars_caelum: {
+		
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('assets/ars_caelum/textures/item/')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes('patchouli_books/caelum_notes/en_us/categories');
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes('patchouli_books/caelum_notes/en_us/entries');
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('data/ars_caelum/recipes/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('ars_caelum/lang/');
+		},
+		repositoryId: 'baileyholl/ars-caelum',
+		name: 'Ars Caelum',
+		icon: '/caelum.png'
+	},
+
 	ars_elemental: {
 		texturePredicate: (filename: string) => {
 			return (
@@ -261,6 +285,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 };
 
 export const addonList = [
+	'ars_caelum',
 	'ars_elemental',
 	'ars_gears',
 	'ars_instrumentum',
