@@ -22,6 +22,28 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		repositoryId: 'baileyholl/Ars-Nouveau',
 		name: 'Ars Nouveau'
 	},
+	ars_creo: {
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('textures/items')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes('patchouli_books/artificers_notes/en_us/categories/');
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes('patchouli_books/artificers_notes/en_us/entries/');
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('recipes');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('lang');
+		},
+		repositoryId: 'baileyholl/Ars-Creo',
+		name: 'Ars Creo',
+		icon: '/creo.png'
+	},
 	ars_caelum: {
 		
 		texturePredicate: (filename: string) => {
@@ -285,6 +307,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 };
 
 export const addonList = [
+	'ars_creo',
 	'ars_caelum',
 	'ars_elemental',
 	'ars_gears',
