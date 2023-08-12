@@ -1,8 +1,6 @@
 <script lang="ts">
-    import '../theme.postcss';
-    import '@skeletonlabs/skeleton/styles/all.css';
     import '../app.postcss';
-    import {AppShell, Drawer, Modal, Toast, toastStore} from '@skeletonlabs/skeleton';
+    import {AppShell, Drawer, Modal, Toast, getToastStore, initializeStores} from '@skeletonlabs/skeleton';
     import {page} from '$app/stores';
     import {afterNavigate} from '$app/navigation';
     import {currentPageSource, storeCurrentUrl} from '$lib/stores/uiState';
@@ -20,6 +18,7 @@
     import { storePopup } from '@skeletonlabs/skeleton';
 
     storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+    initializeStores();
 
     onMount(() => {
         if (browser) {
@@ -44,7 +43,7 @@
                 console.log($currentPageSource);
                 console.log(get(currentPageSource));
                 window.location.replace("/");
-                toastStore.trigger({
+                getToastStore().trigger({
                     message: 'Loading/Unloading addons, redirecting to main page',
                     // Optional:
                     autohide: true,

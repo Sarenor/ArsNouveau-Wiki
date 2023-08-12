@@ -1,14 +1,14 @@
 <script lang="ts">
     import {addonList, modInformations} from "$lib/utils/modInformations.js";
     import {selectedAddonStore} from "$lib/stores/addonStore.js";
-    import {ListBox, ListBoxItem, modalStore} from '@skeletonlabs/skeleton';
+    import {ListBox, ListBoxItem, getModalStore} from '@skeletonlabs/skeleton';
 
     // Props
     /** Exposes parent props to this component. */
     export let parent: any;
 
     function onFormSubmit(): void {
-        modalStore.close();
+        getModalStore().close();
     }
 
     // Base Classes

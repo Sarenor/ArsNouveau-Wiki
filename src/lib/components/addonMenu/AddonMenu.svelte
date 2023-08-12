@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { ModalComponent, ModalSettings} from "@skeletonlabs/skeleton";
     import AddonSelectionModal from "$lib/components/addonMenu/AddonSelectionModal.svelte";
-    import { modalStore } from '@skeletonlabs/skeleton';
+    import { getModalStore } from '@skeletonlabs/skeleton';
 
     const triggerAddonModal = () => {
         const modalComponent: ModalComponent = {
@@ -13,7 +13,7 @@
         component: modalComponent,
         title: 'Addon Selection'
     };
-    modalStore.trigger(modalSettings);
+    getModalStore().trigger(modalSettings);
     }
 </script>
 

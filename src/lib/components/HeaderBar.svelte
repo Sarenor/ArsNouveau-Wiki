@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {AppBar, drawerStore, LightSwitch} from '@skeletonlabs/skeleton';
+    import {AppBar, getDrawerStore, LightSwitch} from '@skeletonlabs/skeleton';
     import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
     import {scrollSelectionIntoView} from '$lib/components/navigation/scrollHelper';
     import SmartSearch from "$lib/components/Search/SmartSearch.svelte";
@@ -8,7 +8,7 @@
 
     // Drawer Handler
     function drawerOpen(): void {
-        drawerStore.open();
+        getDrawerStore().open();
         scrollSelectionIntoView();
     }
 </script>
