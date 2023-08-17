@@ -1,6 +1,7 @@
 
 import { join } from 'path';
 import { originalGoldNouveau } from './src/originalGoldNouveauTheme'
+import forms from '@tailwindcss/forms'
 import type { Config } from 'tailwindcss';
 
 // 1. Import the Skeleton plugin
@@ -21,9 +22,7 @@ const config = {
 		extend: {},
 	},
 	plugins: [
-        skeleton({
-            themes: { custom: [originalGoldNouveau] }
-        })
+        forms,skeleton({ themes: { preset: [ { name: "skeleton", enhancements: true }]}})
     ]
 } satisfies Config;
 
