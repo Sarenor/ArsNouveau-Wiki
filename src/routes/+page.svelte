@@ -12,7 +12,7 @@
             <a href="https://github.com/Sarenor/arsnouveau-wiki/issues/new" rel="noopener noreferrer">here</a>!
     </p>
     
-    <p class="text-warning-500">
+    <p class="text-error-500">
         If you got taken to this page automatically when trying to open the Worn notebook in Minecraft version 1.20 and you don't want this to happen, add Patchouli to your modpack
     </p>
 
