@@ -9,7 +9,13 @@
         It can also be a bit janky, with missing names or unexpected errors.</p>
     <p>If you encounter any issues, please reach out in the Ars Nouveau Discord found <a
             href="/category/mod_news/entry/mod_news" rel="noopener noreferrer">here</a> or submit an issue
-            <a href="https://github.com/Sarenor/arsnouveau-wiki/issues/new" rel="noopener noreferrer">here</a>!</p>
+            <a href="https://github.com/Sarenor/arsnouveau-wiki/issues/new" rel="noopener noreferrer">here</a>!
+    </p>
+    
+    <p class="text-error-500">
+        If you got taken to this page automatically when trying to open the Worn notebook in Minecraft version 1.20 and you don't want this to happen, add Patchouli to your modpack
+    </p>
+
     <p>You can now select which Addon Mods you want to include in the wiki! Currently available:</p>
     <ul class="list-disc pl-8">
         <li>
