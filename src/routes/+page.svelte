@@ -65,7 +65,7 @@
             </a>
         </li>
         <li>
-            <a href="https://modrinth.com/mod/tome-of-blood-rebirth" rel="noopener noreferrer"
+            <a href="https://www.curseforge.com/minecraft/mc-mods/tome-of-blood-rebirth" rel="noopener noreferrer"
                target="_blank">
                 Tome of Blood Rebirth
             </a>
