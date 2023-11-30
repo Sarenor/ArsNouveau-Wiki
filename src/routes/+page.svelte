@@ -42,6 +42,12 @@
             </a>
         </li>
         <li>
+            <a href="https://legacy.curseforge.com/minecraft/mc-mods/ars-ocultas" rel="noopener noreferrer"
+               target="_blank">
+                Ars Ocultas
+            </a>
+        </li>
+        <li>
             <a href="https://www.curseforge.com/minecraft/mc-mods/ars-omega" rel="noopener noreferrer" target="_blank">
                 Ars Omega
             </a>
@@ -56,6 +62,12 @@
             <a href="https://www.curseforge.com/minecraft/mc-mods/starbunclemania" rel="noopener noreferrer"
                target="_blank">
                 Starbuncle Mania
+            </a>
+        </li>
+        <li>
+            <a href="https://modrinth.com/mod/tome-of-blood-rebirth" rel="noopener noreferrer"
+               target="_blank">
+                Tome of Blood Rebirth
             </a>
         </li>
         <li>
