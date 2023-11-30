@@ -26,7 +26,6 @@
     import {scrollSelectionIntoView} from "$lib/components/navigation/scrollHelper";
     import Label from "$lib/components/Label.svelte";
     import {texturesStore} from "$lib/stores/fileStore.js";
-    import {modInformations} from "$lib/utils/modInformations.js";
     import AddonInformation from "$lib/components/AddonInformation.svelte";
 
     export let embedded: boolean = false;
