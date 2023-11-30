@@ -184,6 +184,34 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		name: 'Ars Mage Fight',
 		icon: '/black_hole.png'
 	},
+	arsocultas: {
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('src/main/resources/assets/ars_ocultas/textures/item')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return (
+				filename.includes('src/main/resources/data/ars_ocultas/recipes/')
+			);
+		},
+		languagePredicate: () => {
+			return false;
+		},
+		repositoryId: 'mystchonky/Ars-Ocultas',
+		name: 'Ars Ocultas',
+		icon: '/ocultas.png'
+	},
 	arsomega: {
 		texturePredicate: (filename: string) => {
 			return (
@@ -280,6 +308,35 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		name: 'Starbuncle Mania',
 		icon: '/starbuncle_charm.png'
 	},
+	tome_of_blood: {
+		texturePredicate: (filename: string) => {
+			return (
+				filename.includes('src/main/resources/assets/tomeofblood/textures/')
+			);
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return (
+				filename.includes('src/generated/resources/data/ars_nouveau/recipes/') ||
+				filename.includes('src/generated/resources/data/tomeofblood/recipes/')
+			);
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('src/generated/resources/assets/tomeofblood/lang');
+		},
+		repositoryId: 'mystchonky/Tome-of-Blood',
+		name: 'Tome of Blood',
+		icon: '/tomeofblood.png'
+	},
 	too_many_glyphs: {
 		texturePredicate: (filename: string) => {
 			return filename.includes('src/main/resources/assets/toomanyglyphs/textures/items/');
@@ -313,9 +370,11 @@ export const addonList = [
 	'ars_gears',
 	'ars_instrumentum',
 	'ars_mage_fight',
+	'arsocultas',
 	'arsomega',
 	'ars_scalaes',
 	'starbunclemania',
+	'tome_of_blood',
 	'too_many_glyphs'
 ];
 

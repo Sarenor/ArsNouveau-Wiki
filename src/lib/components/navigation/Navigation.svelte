@@ -3,7 +3,7 @@
     import {notDisplayableItems} from "$lib/components/patchouli/RecipeDisplay/notDisplayableItems";
 
     const checkNavIcon = (iconSrc: string, textureStore: App.TextureDictionary) => {
-        if(iconSrc.includes("spell_book") || notDisplayableItems.includes(iconSrc)) {
+        if(iconSrc.includes("spell_book") || notDisplayableItems.includes(iconSrc) || iconSrc.includes("ritual_dummy")) {
             return undefined;
         }
         if(iconSrc.includes("glyph_")) {
