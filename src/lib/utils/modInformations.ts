@@ -2,7 +2,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 	ars_nouveau: {
 		texturePredicate: (filename: string) => {
 			return (
-				filename.includes('textures/items') ||
+				filename.includes('textures/item') ||
 				// Images in Patchouli Book
 				filename.includes('textures/gui/entries')
 			);
