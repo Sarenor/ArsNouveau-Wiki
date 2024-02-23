@@ -1,6 +1,6 @@
 <script lang="ts">
     import {modInformations} from "$lib/utils/modInformations";
-	import { popup, type PopupSettings } from "@skeletonlabs/skeleton";
+    import { popup, type PopupSettings } from "@skeletonlabs/skeleton";
 
     const popupId = String(Math.random());
     let popupSettings: PopupSettings = {
