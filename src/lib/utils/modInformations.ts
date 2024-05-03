@@ -79,12 +79,12 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		},
 		patchouliCategoryPredicate: (filename: string) => {
 			return filename.includes(
-				'src/generated/resources/data/ars_elemental/patchouli_books/elemental_notes/en_us/categories/'
+				'src/generated/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
 			);
 		},
 		patchouliEntryPredicate: (filename: string) => {
 			return filename.includes(
-				'src/generated/resources/data/ars_elemental/patchouli_books/elemental_notes/en_us/entries/'
+				'src/generated/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
 			);
 		},
 		recipePredicate: (filename: string) => {
