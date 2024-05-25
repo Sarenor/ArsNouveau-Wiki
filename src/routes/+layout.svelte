@@ -7,14 +7,14 @@
     import {afterNavigate} from '$app/navigation';
     import {currentPageSource, storeCurrentUrl} from '$lib/stores/uiState';
     import Navigation from '$lib/components/navigation/Navigation.svelte';
-    import HeaderBar from '$lib/components/HeaderBar.svelte';
+    import HeaderBar from '$lib/components/header/HeaderBar.svelte';
     import {selectedAddonStore} from "$lib/stores/addonStore";
     import {browser} from '$app/environment'
     import {get} from "svelte/store";
     import {subscribeToAddonStore} from "$lib/setup/loadAddonFiles";
     import {onMount} from "svelte";
 	import LanguageSelection from '$lib/components/LanguageSelection.svelte';
-	import SmartSearch from '$lib/components/Search/SmartSearch.svelte';
+	import SmartSearch from '$lib/components/search/SmartSearch.svelte';
 	import AddonMenu from '$lib/components/addonMenu/AddonMenu.svelte';
     import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
     import { storePopup } from '@skeletonlabs/skeleton';

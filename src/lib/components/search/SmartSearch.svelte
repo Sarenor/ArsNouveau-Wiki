@@ -1,7 +1,7 @@
 <script lang="ts">
     import {searchStore} from "$lib/stores/searchStore";
-    import Search from "$lib/components/Search/Search.svelte";
-    import Dropdown from "$lib/components/Search/Dropdown.svelte";
+    import Search from "$lib/components/search/Search.svelte";
+    import Dropdown from "$lib/components/search/Dropdown.svelte";
 
     export let mobile = false;
 

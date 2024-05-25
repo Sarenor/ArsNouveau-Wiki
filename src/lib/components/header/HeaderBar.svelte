@@ -2,9 +2,10 @@
 	import { AppBar, drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
 	import MenuIcon from '$lib/components/icons/MenuIcon.svelte';
 	import { scrollSelectionIntoView } from '$lib/components/navigation/scrollHelper';
-	import SmartSearch from '$lib/components/Search/SmartSearch.svelte';
+	import SmartSearch from '$lib/components/search/SmartSearch.svelte';
 	import LanguageSelection from '$lib/components/LanguageSelection.svelte';
 	import AddonMenu from '$lib/components/addonMenu/AddonMenu.svelte';
+	import StarbuncleRun from '$lib/components/header/StarbuncleRun.svelte';
 
 	// Drawer Handler
 	function drawerOpen(): void {
@@ -12,30 +13,6 @@
 		scrollSelectionIntoView();
 	}
 </script>
-
-<style>
-    @keyframes starbuncleRun {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(500%);
-        }
-    }
-
-    .buncle-container {
-        position: relative;
-        overflow: hidden;
-        height: 50px;
-				flex-grow: 1;
-    }
-
-    .buncle {
-        position: absolute;
-        animation: starbuncleRun 6s linear infinite;
-        height: 45px;
-    }
-</style>
 
 <AppBar>
 	<svelte:fragment slot="lead">
@@ -48,13 +25,11 @@
 	<div class="flex flex-row">
 		<a
 			class="text-sm sm:text-lg md:text-3xl font-bold uppercase mr-4"
-			href="/"
+			href="/static"
 			id="ars_nouveau_wiki"
 			title="Return to main page">Ars Nouveau Wiki</a
 		>
-		<div class="buncle-container">
-			<img src="/runningbuncle/starbuncle_run_purple_border.gif" alt="animated running Starbuncle" class="buncle" />
-		</div>
+		<StarbuncleRun/>
 	</div>
 	<svelte:fragment slot="trail">
 		<div class="hidden lg:block">
