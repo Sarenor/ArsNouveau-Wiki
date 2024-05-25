@@ -108,7 +108,7 @@
 	</div>
 </div>
 
-<div data-popup="bio-popup" class="card variant-glass-primary p-4 max-w-lg">
+<div data-popup="bio-popup" class="card variant-filled-primary p-4 max-w-lg">
 	{starbuncles[starbuncleIndex].bio}
-	<div class="arrow variant-filled-primary" />
+	<div class="arrow variant-filled-secondary" />
 </div>
