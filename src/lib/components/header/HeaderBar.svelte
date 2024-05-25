@@ -24,7 +24,7 @@
 	</svelte:fragment>
 	<div class="flex flex-row">
 		<a
-			class="text-sm sm:text-lg md:text-3xl font-bold uppercase mr-4"
+			class="hidden sm:block text-sm sm:text-lg md:text-3xl font-bold uppercase mr-4"
 			href="/static"
 			id="ars_nouveau_wiki"
 			title="Return to main page">Ars Nouveau Wiki</a
