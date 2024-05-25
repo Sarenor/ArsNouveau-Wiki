@@ -50,7 +50,8 @@
     }
 
     .buncle {
-        height: 45px;
+        height: 50px;
+				margin-left: -3px;
     }
 
     .buncle-name {
@@ -62,6 +63,7 @@
 
 		.mirrored {
         transform: scaleX(-1);
+				margin-left: -7px;
 		}
 </style>
 
