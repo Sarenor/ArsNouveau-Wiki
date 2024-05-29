@@ -13,8 +13,8 @@
 			color: 'red'
 		}
 	];
-	let starbuncleIndex = 0;
-	let src = '/runningbuncle/starbuncle_run_purple_border.gif';
+	$: starbuncleIndex = 0;
+	$: src = `/runningbuncle/starbuncle_run_${starbuncles[starbuncleIndex].color}.gif`;
 	let popupSettings: PopupSettings = {
 		event: 'hover',
 		placement: 'bottom',
@@ -40,16 +40,16 @@
 					changeBegan++;
 					if (changeBegan % 2 === 1) {
 						state = 'FORWARDS';
-						src = '/runningbuncle/starbuncle_run_purple_border.gif';
+						src = `/runningbuncle/starbuncle_run_${starbuncles[starbuncleIndex].color}.gif`;
 					} else {
 						state = 'BACKWARDS';
-						src = '/runningbuncle/starbuncle_run_purple_border.gif';
+						src = `/runningbuncle/starbuncle_run_${starbuncles[starbuncleIndex].color}.gif`;
 					}
 				},
 				changeComplete: function(anim) {
 					if (changeBegan % 2 === 1) {
 						state = 'WAITING';
-						src = '/runningbuncle/lilly.png';
+						src = `/runningbuncle/starbuncle_sitting_${starbuncles[starbuncleIndex].color}.png`;
 					} else {
 						starbuncleIndex = getRandomStarbuncleIndex();
 					}
