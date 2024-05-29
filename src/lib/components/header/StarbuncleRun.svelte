@@ -71,6 +71,7 @@
         position: relative;
         overflow: hidden;
         height: 50px;
+				max-width: 800px;
         flex-grow: 1;
     }
 
