@@ -31,7 +31,7 @@
 				targets: '.buncle-box',
 				translateX: ['-25%', '79%'],
 				delay: 1000,
-				endDelay: 1000,
+				endDelay: 5000,
 				loop: true,
 				duration: 3500,
 				direction: 'alternate',
