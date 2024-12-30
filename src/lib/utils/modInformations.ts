@@ -94,7 +94,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 			);
 		},
 		languagePredicate: (filename: string) => {
-			return filename.includes('src/main/resources/assets/ars_elemental/lang/');
+			return filename.includes('src/generated/resources/assets/ars_elemental/lang/');
 		},
 		repositoryId: 'Alexthw46/Ars-Elemental',
 		name: 'Ars Elemental',
