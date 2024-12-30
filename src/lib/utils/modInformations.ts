@@ -23,6 +23,32 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		download: 'https://www.curseforge.com/minecraft/mc-mods/ars-nouveau',
 		name: 'Ars Nouveau'
 	},
+
+	ars_additions: {
+		texturePredicate: (filename: string) => {
+			return filename.includes('assets/ars_additions/textures/item/');
+		},
+		patchouliCategoryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/main/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/categories/'
+			);
+		},
+		patchouliEntryPredicate: (filename: string) => {
+			return filename.includes(
+				'src/generated/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/'
+			);
+		},
+		recipePredicate: (filename: string) => {
+			return filename.includes('src/generated/resources/data/ars_additions/recipe/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('assets/ars_additions/lang/');
+		},
+		repositoryId: 'Jarva/Ars-Additions',
+		download: 'https://www.curseforge.com/minecraft/mc-mods/ars-additions',
+		name: 'Ars Additions',
+		icon: '/additions.png'
+	},
 	ars_creo: {
 		texturePredicate: (filename: string) => {
 			return filename.includes('textures/items');
@@ -90,7 +116,6 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		name: 'Ars Controle',
 		icon: '/controle.png'
 	},
-
 	ars_elemental: {
 		texturePredicate: (filename: string) => {
 			return (
@@ -306,6 +331,25 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 		download: 'https://www.curseforge.com/minecraft/mc-mods/ars-scalaes',
 		name: 'Ars Scalaes',
 		icon: '/scalaes.png'
+	},
+	ars_technica: {
+		texturePredicate: (filename: string) => {
+			return filename.includes('assets/ars_technica/textures/item/');
+		},
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		patchouliCategoryPredicate: (filename: string) => false,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		patchouliEntryPredicate: (filename: string) => false,
+		recipePredicate: (filename: string) => {
+			return filename.includes('data/ars_technica/recipe/');
+		},
+		languagePredicate: (filename: string) => {
+			return filename.includes('assets/ars_technica/lang/');
+		},
+		repositoryId: 'zeroregard/Ars-Technica',
+		download: 'https://www.curseforge.com/minecraft/mc-mods/ars-technica',
+		name: 'Ars Technica',
+		icon: '/technica.png'
 	},
 	starbunclemania: {
 		texturePredicate: (filename: string) => {
