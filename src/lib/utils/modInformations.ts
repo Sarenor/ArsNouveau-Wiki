@@ -436,6 +436,7 @@ export const modInformations: { [x: string]: App.ModInformation } = {
 };
 
 export const addonList = [
+	'ars_additions',
 	'ars_creo',
 	'ars_caelum',
 	'ars_controle',
@@ -446,6 +447,7 @@ export const addonList = [
 	'arsocultas',
 	'arsomega',
 	'ars_scalaes',
+	'ars_technica',
 	'starbunclemania',
 	'tome_of_blood',
 	'too_many_glyphs'
